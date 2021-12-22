@@ -15,11 +15,8 @@ public class PlayerController : MonoBehaviour
     private bool longPress = false;
     private bool use = false;
 
-
     private bool moveInput = false;
     private Vector3 direction;
-
-
     private Rigidbody myRigidbody;
 
     //[SerializeField]
@@ -28,47 +25,76 @@ public class PlayerController : MonoBehaviour
     private float useSeconds = 1;
 
 
+    [SerializeField]
+    int useDistance = 20;
+
+    //Player stuff
+    private bool isAlive = true;
+
+    //health
+    private int currenthealth = 100;
+    [SerializeField]
+    private int maxHealth = 100;
+
+    //backPack Space
+    [SerializeField]
+    private int maxSpace = 10;
+    private int currentSpace = 0;
+    public int getMaxSpace() => maxSpace;
+    public int getCurrentSpace() => currentSpace;
+
+    //Oxygen
+    [SerializeField]
+    private int maxOxygen = 100;
+    private int currentOxygen = 100;
+
+
+
     void Awake()
     {
-
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
-    {        
-
-        if (Input.GetButtonDown("Fire1"))
+    {
+        if (isAlive)
         {
-            input = true;
-
-            StartCoroutine(CheckForUse());
-
-            //hudController.StartReticle(useSeconds);
-        }
-
-        if (Input.GetButtonUp("Fire1"))
-        {
-            input = false;
-
-            if (!longPress)
+            if (Input.GetButtonDown("Fire1"))
             {
-                moving = !moving;
-                direction = camera.forward.normalized;
-            }
-            else
-            {
-                use = true;
-                longPress = false;
+                input = true;
+
+                StartCoroutine(CheckForUse());
+
+                //hudController.StartReticle(useSeconds);
             }
 
-            //hudController.resetRetticle();
-        }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                input = false;
+
+                if (!longPress)
+                {
+                    moving = !moving;
+                    direction = camera.forward.normalized;
+                }
+                else
+                {
+                    use = true;
+                    longPress = false;
+                }
+
+                //hudController.resetRetticle();
+            }
+        } 
+        else { ResetInput(); }
+
 
     }
 
@@ -86,6 +112,9 @@ public class PlayerController : MonoBehaviour
             //do something;
 
             Debug.Log("Using");
+            Interact();
+
+            
 
         }
         else
@@ -118,4 +147,49 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Interact()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(camera.position, camera.forward, out hit, useDistance))
+        {
+            if (hit.collider)
+            {
+                Debug.Log($"Interacting with {hit.collider.transform.name}");
+                IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
+                if (I != null)
+                {
+                    foreach (var i in I)
+                    {
+                        i.Interact(this);
+                    }
+                    //I.Interact(this.gameObject);
+                }
+            }
+        }
+    }
+
+
+    public void loseHealth(int damage)
+    {
+        currenthealth -= damage;
+        if (currenthealth < 0) isAlive = false;
+    }
+
+    public void pickUpObject(int ammount)
+    {
+        currentSpace += ammount;
+    }
+
+    private void PlaceTrashInStorage()
+    {
+        currentSpace = 0;
+    }
+
+    public void replenishOxygen()
+    {
+        currentOxygen = maxOxygen;
+    }
+
+
+   
 }
