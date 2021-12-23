@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float useSeconds = 1;
 
-
     [SerializeField]
     int useDistance = 20;
 
@@ -48,7 +47,8 @@ public class PlayerController : MonoBehaviour
     private int maxOxygen = 100;
     private int currentOxygen = 100;
 
-
+    //Story flags
+    bool blackBox = false;
 
     void Awake()
     {
@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
         currentSpace += ammount;
     }
 
-    private void PlaceTrashInStorage()
+    public void PlaceTrashInStorage()
     {
         currentSpace = 0;
     }
@@ -190,6 +190,9 @@ public class PlayerController : MonoBehaviour
         currentOxygen = maxOxygen;
     }
 
-
+    public void getBlackBox()
+    {
+        blackBox = true;
+    }
    
 }

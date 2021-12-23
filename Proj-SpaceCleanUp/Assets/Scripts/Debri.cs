@@ -2,22 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Debri : MonoBehaviour, IInteractible
+public class Debri : Pickable, IInteractible
 {
-    [SerializeField]
-    private int size;
-    [SerializeField]
-    private float movementSpeed = 7;
+    
 
-    private Transform playerPos = null;
-    private bool activated = false;
-    private Vector3 dir;
-    private Rigidbody myRigidBody;
 
-    void Awake()
-    {
-        myRigidBody = GetComponent<Rigidbody>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +20,7 @@ public class Debri : MonoBehaviour, IInteractible
         
     }
 
-    void FixedUpdate()
-    {
-        if (activated)
-        {
-          dir = playerPos.position - this.transform.position;
-          myRigidBody.velocity = dir * movementSpeed;
-        }
-    }
-
-    public void Interact(PlayerController player)
+    public override void Interact(PlayerController player)
     {
         if (player.getCurrentSpace() + size <= player.getMaxSpace()) //if player has space available
         {
@@ -57,13 +37,5 @@ public class Debri : MonoBehaviour, IInteractible
         }        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            activated = false;
-            this.gameObject.SetActive(false);
-            
-        }
-    }
+
 }
