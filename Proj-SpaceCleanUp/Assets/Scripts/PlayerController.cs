@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
     //Story flags
     bool blackBox = false;
 
+    [SerializeField]
+    private bool Movable = true;
+
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -79,10 +82,13 @@ public class PlayerController : MonoBehaviour
             {
                 input = false;
 
-                if (!longPress)
+                if (!longPress )
                 {
-                    moving = !moving;
-                    direction = camera.forward.normalized;
+                    if (Movable)
+                    {
+                        moving = !moving;
+                        direction = camera.forward.normalized;
+                    }
                 }
                 else
                 {

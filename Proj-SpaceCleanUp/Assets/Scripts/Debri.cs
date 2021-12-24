@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Debri : Pickable, IInteractible
 {
-    
-
+    [SerializeField]
+    private bool mandatory = false;
 
 
     // Start is called before the first frame update

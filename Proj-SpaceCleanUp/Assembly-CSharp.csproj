@@ -181,6 +181,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\BlackBox.cs" />
      <Compile Include="Assets\Scripts\Debri.cs" />
+     <Compile Include="Assets\Scripts\DebriManager.cs" />
      <Compile Include="Assets\Scripts\DebriStorage.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
