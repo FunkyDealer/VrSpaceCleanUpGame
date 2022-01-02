@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Debri : Pickable, IInteractible
 {
-    [SerializeField]
-    private bool mandatory = false;
+
 
 
     // Start is called before the first frame update
@@ -36,6 +35,30 @@ public class Debri : Pickable, IInteractible
             Debug.Log("Not enough Space");
         }        
     }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            activated = false;
+            
+
+            transform.position = new Vector3(999, 999, 999);
+            StartCoroutine(CountDownToDeath(0.2f));
+
+        }
+    }
+
+    private IEnumerator CountDownToDeath(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        //this.gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
+
+
 
 
 }

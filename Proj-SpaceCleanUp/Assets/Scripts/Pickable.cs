@@ -46,7 +46,7 @@ public class Pickable : MonoBehaviour, IInteractible
        
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

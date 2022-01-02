@@ -53,9 +53,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool Movable = true;
 
+
+    private bool inField = true;
+
+    //Objectives
+    private Dictionary<string, Objective> currentObjectives;
+
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        
     }
 
     // Start is called before the first frame update
@@ -200,5 +207,53 @@ public class PlayerController : MonoBehaviour
     {
         blackBox = true;
     }
+
+    public void setinField(bool b)
+    {
+        inField = b;
+
+        if (!inField)
+        {
+            //do something in hud;
+            Debug.Log("You have left the mission Field");
+        }
+        else
+        {
+            Debug.Log("You have arrived at the mission Field");
+        }
+    }
+
+
+    public void addObjective(Objective o)
+    {
+        if (currentObjectives == null)
+        {
+            currentObjectives = new Dictionary<string, Objective>();
+        }
+
+        if (!currentObjectives.ContainsKey(o.questLine)) //if questline doesn't exist
+        {
+            currentObjectives.Add(o.questLine, o); //add it
+        }
+        else
+        {
+            currentObjectives[o.questLine] = o; //else change the objective to the new one
+        }
+
+        Debug.Log($"new Objective: {o.description}");
+    }
+
+    public void RemoveObjective(Objective o)
+    {
+        currentObjectives.Remove(o.questLine);
+
+        Debug.Log($"Completed Objective: {o.description}");
+    }
    
+    public Objective getObjective(Objective o) //get questline objective
+    {
+        if (currentObjectives.ContainsKey(o.questLine)) return currentObjectives[o.questLine];
+        else return null;
+    }
+
 }
