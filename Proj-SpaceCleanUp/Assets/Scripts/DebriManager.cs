@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebriManager : MonoBehaviour
+public class DebriManager : ObjectiveInteractor
 {
     List<Debri> debriList;
 
 
-    void Awake()
+    protected override void Awake()
     {
-
+        base.Awake();
         debriList = new List<Debri>();
 
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
 
         if (transform.childCount > 0) {
 
@@ -28,7 +29,11 @@ public class DebriManager : MonoBehaviour
                 Transform t = transform.GetChild(i);
                 Debri d = t.gameObject.GetComponent<Debri>();
 
-                if (d != null) debriList.Add(d);
+                if (d != null)
+                {
+                    debriList.Add(d);
+                    d.setDebriManager(this);
+                }
             }
         }
 
@@ -41,4 +46,17 @@ public class DebriManager : MonoBehaviour
     {
         
     }
+
+
+    public void removeDebri(Debri d)
+    {
+        debriList.Remove(d);
+
+        if (debriList.Count == 0)
+        {
+            EndObjective();
+        }
+    }
+
+
 }

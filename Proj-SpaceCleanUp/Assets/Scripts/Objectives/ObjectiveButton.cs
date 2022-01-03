@@ -2,24 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Booster : ObjectiveInteractor, IInteractible
+public class ObjectiveButton : ObjectiveInteractor, IInteractible
 {
-    [SerializeField]
-    GameObject boosterObj;
 
 
-    protected override void Awake()
-    {
-        base.Awake();
 
-    }
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
     }
-
 
 
     // Update is called once per frame
@@ -30,18 +23,11 @@ public class Booster : ObjectiveInteractor, IInteractible
 
     public void Interact(PlayerController player)
     {
-        if (player.getObjective(objective) == objective)
-        {
-
-            Action();
-        }
+        if (manager.getCurrentQuestObjective(objective) == objective.ID) EndObjective();
     }
 
     private void Action()
     {
-        gameObject.SetActive(false);
-
-        boosterObj.SetActive(true);
 
         EndObjective();
         //active next

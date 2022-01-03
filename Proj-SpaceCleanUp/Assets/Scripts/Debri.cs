@@ -5,7 +5,7 @@ using UnityEngine;
 public class Debri : Pickable, IInteractible
 {
 
-
+    DebriManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,7 @@ public class Debri : Pickable, IInteractible
             
 
             transform.position = new Vector3(999, 999, 999);
+            if (manager != null) manager.removeDebri(this);
             StartCoroutine(CountDownToDeath(0.2f));
 
         }
@@ -59,6 +60,9 @@ public class Debri : Pickable, IInteractible
 
 
 
-
+    public void setDebriManager(DebriManager manager)
+    {
+        this.manager = manager;
+    }
 
 }

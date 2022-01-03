@@ -357,13 +357,36 @@ GameObject:
   - component: {fileID: 366656836}
   - component: {fileID: 366656835}
   - component: {fileID: 366656834}
+  - component: {fileID: 366656833}
   m_Layer: 0
   m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &366656833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366656832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed5b9042e2f8384cb9e0c14931a45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 444400125}
+  manager: {fileID: 890671438}
+  objective:
+    ID: 4
+    questLine: Main
+    name: Activate Booster
+    description: Activate the booster in the satellite
+    addedAtStart: 1
+  scripts: []
+  HideAtStart: 1
 --- !u!65 &366656834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -713,6 +736,7 @@ MonoBehaviour:
     description: Clean Up debris between satellite and Ship
     addedAtStart: 1
   scripts: []
+  HideAtStart: 0
 --- !u!1 &591522128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1618,7 @@ MonoBehaviour:
     description: Place the booster to move the satellite
     addedAtStart: 1
   scripts: []
+  HideAtStart: 1
   boosterObj: {fileID: 366656832}
 --- !u!65 &1759105523
 BoxCollider:

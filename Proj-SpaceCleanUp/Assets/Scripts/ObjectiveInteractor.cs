@@ -17,18 +17,23 @@ public class ObjectiveInteractor : MonoBehaviour
 
     protected Triggerable[] triggerables; //Triggerable list
 
+    [SerializeField]
+    protected bool HideAtStart = false;
+
 
     protected virtual void Awake()
     {
         if (objective.addedAtStart) manager.AddObjective(objective);
 
         triggerables = GetComponents<Triggerable>();
+
+        
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-
+        if (HideAtStart) this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

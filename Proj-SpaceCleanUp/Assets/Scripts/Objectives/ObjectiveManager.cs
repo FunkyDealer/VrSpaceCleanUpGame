@@ -76,20 +76,22 @@ public class ObjectiveManager : MonoBehaviour
 
     public void ObjectiveDone(Objective o)
     {
-        QuestList[o.questLine].Remove(o);
-
-        if (QuestList[o.questLine].Count > 0)
+        if (QuestList[o.questLine] != null)
         {
-            currentObjectiveList[o.questLine] = o.ID + 1; 
+            if (QuestList[o.questLine].Contains(o)) QuestList[o.questLine].Remove(o);
 
-            player.addObjective(getNextObjective(o));
+            if (QuestList[o.questLine].Count > 0)
+            {
+                currentObjectiveList[o.questLine] = o.ID + 1;
 
+                player.addObjective(getNextObjective(o));
+
+            }
+            else
+            {
+                player.RemoveObjective(o);
+            }
         }
-        else
-        {
-            player.RemoveObjective(o);
-        }
-
 
     }
 

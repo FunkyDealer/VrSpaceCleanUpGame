@@ -163,9 +163,13 @@ MonoBehaviour:
   camera: {fileID: 700730225867392820}
   useSeconds: 1
   useDistance: 20
+  interactionMask:
+    serializedVersion: 2
+    m_Bits: 51
   maxHealth: 100
   maxSpace: 10
   maxOxygen: 100
+  Movable: 1
 --- !u!1001 &700730227888430698
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     int useDistance = 20;
+    [SerializeField]
+    LayerMask interactionMask;
 
     //Player stuff
     private bool isAlive = true;
@@ -163,7 +165,7 @@ public class PlayerController : MonoBehaviour
     void Interact()
     {
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, useDistance))
+        if (Physics.Raycast(camera.position, camera.forward, out hit, useDistance, layerMask: interactionMask))
         {
             if (hit.collider)
             {

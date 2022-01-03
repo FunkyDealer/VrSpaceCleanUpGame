@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\MandatoryCleanUpManager.cs" />
      <Compile Include="Assets\Scripts\ObjectiveInteractor.cs" />
      <Compile Include="Assets\Scripts\Objectives\Objective.cs" />
+     <Compile Include="Assets\Scripts\Objectives\ObjectiveButton.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveManager.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveTrigger.cs" />
      <Compile Include="Assets\Scripts\Objectives\ScriptableObjects\MyScriptableObject.cs" />
@@ -197,6 +198,7 @@
      <Compile Include="Assets\Scripts\Pickable.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayZoneManager.cs" />
+     <Compile Include="Assets\Scripts\SatelliteScript.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
