@@ -180,7 +180,6 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\BlackBox.cs" />
-     <Compile Include="Assets\Scripts\Booster.cs" />
      <Compile Include="Assets\Scripts\Debri.cs" />
      <Compile Include="Assets\Scripts\DebriManager.cs" />
      <Compile Include="Assets\Scripts\DebriStorage.cs" />
@@ -198,7 +197,9 @@
      <Compile Include="Assets\Scripts\Pickable.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayZoneManager.cs" />
-     <Compile Include="Assets\Scripts\SatelliteScript.cs" />
+     <Compile Include="Assets\Scripts\Satellite Scripts\Booster.cs" />
+     <Compile Include="Assets\Scripts\Satellite Scripts\BoosterObjectiveManager.cs" />
+     <Compile Include="Assets\Scripts\Satellite Scripts\SatelliteScript.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />

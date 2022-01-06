@@ -167,7 +167,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   maxHealth: 100
-  maxSpace: 10
+  maxSpace: 100
   maxOxygen: 100
   Movable: 1
 --- !u!1001 &700730227888430698

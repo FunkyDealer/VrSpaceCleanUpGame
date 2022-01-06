@@ -6,7 +6,7 @@ public class ActivateObjectTriggerable : Triggerable
 {
 
     [SerializeField]
-    GameObject ObjectToActivate;
+    List<GameObject> ObjectToActivate;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,6 @@ public class ActivateObjectTriggerable : Triggerable
     {
         base.Activate();
 
-        ObjectToActivate.SetActive(true);
+        if (ObjectToActivate.Count > 0) foreach (var g in ObjectToActivate) g.SetActive(true);
     }
 }
