@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 700730227787295686, guid: 3a9dc01b86c4fa149bd738335ce0d876,
+        type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 2106770041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9dc01b86c4fa149bd738335ce0d876, type: 3}
 --- !u!1001 &1924348115
@@ -962,6 +967,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2106770041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 700730225867392820, guid: 3a9dc01b86c4fa149bd738335ce0d876,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687298065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1018022452890384039
 PrefabInstance:
   m_ObjectHideFlags: 0

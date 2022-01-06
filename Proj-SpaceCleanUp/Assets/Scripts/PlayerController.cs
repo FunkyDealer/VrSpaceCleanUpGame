@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private float movementSpeed = 5;
 
     [SerializeField]
-    private Transform camera;
+    private Transform myCamera;
 
     private bool moving = false;
     private bool input = false;
@@ -55,8 +55,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool Movable = true;
 
-
     private bool inField = true;
+
+    private IInteractible[] myInteractibes;
 
     //Objectives
     private Dictionary<string, Objective> currentObjectives;
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
                     if (Movable)
                     {
                         moving = !moving;
-                        direction = camera.forward.normalized;
+                        direction = myCamera.forward.normalized;
                     }
                 }
                 else
@@ -127,9 +128,7 @@ public class PlayerController : MonoBehaviour
             //do something;
 
             Debug.Log("Using");
-            Interact();
-
-            
+            Interact();            
 
         }
         else
@@ -137,7 +136,24 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = Vector3.zero;
         }
 
-
+        //Interactions
+        RaycastHit hit;
+        if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, useDistance, layerMask: interactionMask))
+        {
+            if (hit.collider)
+            {
+                //Debug.Log($"Interacting with {hit.collider.transform.name}");
+                IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
+                if (I != null)
+                {
+                    myInteractibes = I;
+                }
+                else
+                {
+                    myInteractibes = null;
+                }
+            }
+        }
 
 
         ResetInput();
@@ -164,22 +180,13 @@ public class PlayerController : MonoBehaviour
 
     void Interact()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, useDistance, layerMask: interactionMask))
+        if (myInteractibes != null)
         {
-            if (hit.collider)
+            foreach (var i in myInteractibes)
             {
-                Debug.Log($"Interacting with {hit.collider.transform.name}");
-                IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
-                if (I != null)
-                {
-                    foreach (var i in I)
-                    {
-                        i.Interact(this);
-                    }
-                    //I.Interact(this.gameObject);
-                }
+                i.Interact(this);
             }
+            
         }
     }
 
