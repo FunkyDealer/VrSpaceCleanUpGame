@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool moveInput = false;
     private Vector3 direction;
     private Rigidbody myRigidbody;
+    private Camera myCameraGO;
 
     //[SerializeField]
     //private HudController hudController;
@@ -83,6 +84,18 @@ public class PlayerController : MonoBehaviour
             {
                 input = true;
 
+                RaycastHit hit;
+
+                if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, 20.0f))
+                {
+                    if (hit.collider.CompareTag("UI"))
+                    {
+                        Debug.LogWarning("we are not movable!");
+                        //moving = false;
+                        //Movable = false;
+                    }
+                }
+                
                 StartCoroutine(CheckForUse());
 
                 //hudController.StartReticle(useSeconds);
