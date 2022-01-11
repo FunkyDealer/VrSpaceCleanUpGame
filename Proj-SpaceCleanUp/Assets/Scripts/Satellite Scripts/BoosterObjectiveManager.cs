@@ -29,6 +29,7 @@ public class BoosterObjectiveManager : ObjectiveInteractor
 
         if (code1 && code2)
         {
+           
             EndObjective();
         }
     }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float movementSpeed = 5;
+    private float maxMovementSpeed = 5;
+    private float currentMovementSpeed = 0;
+    [SerializeField, Min(0.01f)]
+    private float movSmoothLerp = 0.03f;
 
     [SerializeField]
     private Transform myCamera;
@@ -84,17 +87,6 @@ public class PlayerController : MonoBehaviour
             {
                 input = true;
 
-                RaycastHit hit;
-
-                if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, 20.0f))
-                {
-                    if (hit.collider.CompareTag("UI"))
-                    {
-                        Debug.LogWarning("we are not movable!");
-                        //moving = false;
-                        //Movable = false;
-                    }
-                }
                 
                 StartCoroutine(CheckForUse());
 
@@ -131,10 +123,9 @@ public class PlayerController : MonoBehaviour
     {
         if (moving)
         {
-            myRigidbody.velocity = direction * movementSpeed;
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, maxMovementSpeed, movSmoothLerp);
 
-
-
+            myRigidbody.velocity = direction * currentMovementSpeed;
         }
         else if (use)
         {
@@ -146,7 +137,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            myRigidbody.velocity = Vector3.zero;
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, 0, movSmoothLerp);
+            myRigidbody.velocity = direction * currentMovementSpeed;
         }
 
         //Interactions

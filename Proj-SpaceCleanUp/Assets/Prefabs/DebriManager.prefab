@@ -43,3 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d487b2c42516044097528363671e657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  manager: {fileID: 0}
+  objective:
+    ID: 1
+    questLine: CleanUp
+    name: Clean up Debri
+    description: Clean up as many debris as you can
+    addedAtStart: 1
+  scripts: []
+  HideAtStart: 0

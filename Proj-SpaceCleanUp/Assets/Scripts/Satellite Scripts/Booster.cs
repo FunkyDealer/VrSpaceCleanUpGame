@@ -13,7 +13,7 @@ public class Booster : MonoBehaviour, IInteractible
     GameObject boosterObj;
 
     [SerializeField]
-    BoosterObjectiveManager manager;
+    BoosterObjectiveManager boosterManager;
 
     [SerializeField]
     bool Promt = true;
@@ -40,7 +40,7 @@ public class Booster : MonoBehaviour, IInteractible
 
     public void Interact(PlayerController player)
     {
-        if (manager.getObjectiveConfirmation() && Active) Action();
+        if (boosterManager.getObjectiveConfirmation() && Active) Action();
     }
 
     private void Action()
@@ -60,9 +60,9 @@ public class Booster : MonoBehaviour, IInteractible
 
     private void SendReadyNotice()
     {
-
-        if (Promt) manager.receiveNoticePrompt(code);
-        else manager.ReceiveNoticeActivate();
+  
+        if (Promt) boosterManager.receiveNoticePrompt(code);
+        else boosterManager.ReceiveNoticeActivate();
     }
 
     

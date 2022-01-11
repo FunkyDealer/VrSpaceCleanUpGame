@@ -40,11 +40,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6185847422403520300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feee1675c1e8e0345b7383d6099d62c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5262cf5194684c24582860ef3bbc2808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 0
-  maxZDistance: 0
+  spawnDistance: 41.1
+  maxZDistance: 59.8
   impactObject: {fileID: 0}
   playerPosition: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 0, a: 0}
+  playerController: {fileID: 0}
