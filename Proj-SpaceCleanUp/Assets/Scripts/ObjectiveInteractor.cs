@@ -55,6 +55,9 @@ public class ObjectiveInteractor : MonoBehaviour
         if (triggerables.Length > 0) for (int i = 0; i < triggerables.Length; i++) triggerables[i].Activate(); //Activate modules if any
     }
 
-
+    public Objective GetObjective()
+    {
+        return objective;
+    }
 
 }

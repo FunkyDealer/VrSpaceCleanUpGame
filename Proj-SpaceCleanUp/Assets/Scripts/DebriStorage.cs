@@ -23,6 +23,7 @@ public class DebriStorage : MonoBehaviour, IInteractible
 
     public void Interact(PlayerController player)
     {
+        Debug.Log("putting debri in");
         ammount += player.getCurrentSpace();
         player.PlaceTrashInStorage();
         updateDisplay();

@@ -15,7 +15,7 @@ public class Pickable : MonoBehaviour, IInteractible
     protected Rigidbody myRigidBody;
 
 
-    void Awake()
+    protected virtual void Awake()
     {
         myRigidBody = GetComponent<Rigidbody>();
     }
@@ -43,7 +43,7 @@ public class Pickable : MonoBehaviour, IInteractible
 
     public virtual void Interact(PlayerController player)
     {
-       
+        playerPos = player.transform;
     }
 
     protected virtual void OnTriggerEnter(Collider other)

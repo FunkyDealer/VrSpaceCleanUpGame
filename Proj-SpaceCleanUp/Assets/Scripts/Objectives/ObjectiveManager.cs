@@ -71,7 +71,8 @@ public class ObjectiveManager : MonoBehaviour
 
     public int getCurrentQuestObjective(Objective o)
     {
-        return currentObjectiveList[o.questLine];
+        if (currentObjectiveList.ContainsKey(o.questLine)) return currentObjectiveList[o.questLine];
+        else return -1;
     }
 
     public void ObjectiveDone(Objective o)
@@ -92,7 +93,6 @@ public class ObjectiveManager : MonoBehaviour
                 player.RemoveObjective(o);
             }
         }
-
     }
 
     private Objective getNextObjective(Objective o)

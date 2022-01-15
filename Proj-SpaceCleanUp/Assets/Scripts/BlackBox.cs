@@ -17,8 +17,9 @@ public class BlackBox : Pickable, IInteractible
 
     Triggerable[] triggerables; //Triggerable list
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (objective.addedAtStart) manager.AddObjective(objective);
 
         triggerables = GetComponents<Triggerable>();
@@ -37,12 +38,14 @@ public class BlackBox : Pickable, IInteractible
         
     }
 
+    
+
     public override void Interact(PlayerController player)
     {
+        base.Interact(player);
         player.getBlackBox();
 
         activated = true;
-        playerPos = player.transform;
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -58,9 +61,12 @@ public class BlackBox : Pickable, IInteractible
 
     public virtual void EndObjective()
     {
-        manager.ObjectiveDone(objective); //tell manager that objective is done and ask if the quest is finished;
+        manager.AddObjective(objective);
+        
 
         if (scripts.Count > 0) foreach (var s in scripts) s.Activate(); //Activate Scripts if any
         if (triggerables.Length > 0) for (int i = 0; i < triggerables.Length; i++) triggerables[i].Activate(); //Activate modules if any
+
+        manager.ObjectiveDone(objective); //tell manager that objective is done and ask if the quest is finished;
     }
 }

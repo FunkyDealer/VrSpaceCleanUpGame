@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
                     if (Movable)
                     {
                         moving = !moving;
-                        direction = myCamera.forward.normalized;
+                        if (moving) direction = myCamera.forward.normalized;
                     }
                 }
                 else
@@ -195,6 +195,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ChangeMovement(bool mv)
+    {
+        Movable = mv;
+    }
 
     public void loseHealth(int damage)
     {

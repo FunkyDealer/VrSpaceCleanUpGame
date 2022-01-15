@@ -21,13 +21,13 @@ public class Debri : Pickable, IInteractible
 
     public override void Interact(PlayerController player)
     {
+        base.Interact(player);
         if (player.getCurrentSpace() + size <= player.getMaxSpace()) //if player has space available
         {
-
             // this.gameObject.SetActive(false);
             player.pickUpObject(size);
             activated = true;
-            playerPos = player.transform;
+            
         }
         else //if player doesn't have space available
         {
