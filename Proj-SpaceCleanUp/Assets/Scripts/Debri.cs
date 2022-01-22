@@ -25,23 +25,23 @@ public class Debri : Pickable, IInteractible
         if (player.getCurrentSpace() + size <= player.getMaxSpace()) //if player has space available
         {
             // this.gameObject.SetActive(false);
-            player.pickUpObject(size);
             activated = true;
             
         }
         else //if player doesn't have space available
         {
             //inform player that there isn't enough space
+            player.BackPackFullWarning();
             Debug.Log("Not enough Space");
         }        
     }
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (activated && other.CompareTag("Player"))
         {
             activated = false;
-            
+            player.pickUpObject(size);
 
             transform.position = new Vector3(999, 999, 999);
             if (manager != null) manager.removeDebri(this);

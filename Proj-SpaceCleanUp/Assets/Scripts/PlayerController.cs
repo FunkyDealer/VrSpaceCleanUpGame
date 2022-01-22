@@ -66,6 +66,28 @@ public class PlayerController : MonoBehaviour
     //Objectives
     private Dictionary<string, Objective> currentObjectives;
 
+    private int CurrentMoney = 0;
+
+    //Sound
+    [Header("Sound")]
+    [SerializeField]
+    PlayerSoundPlayer SoundPlayer;
+    bool backPackHalf = false; //set bool true when backpack reaches half, set back to false when backpack emptied
+
+    //HUD Connections
+    [Header("HUD Connections")]
+    [SerializeField]
+    private HealthSlider _healthSlider; //Variable updated in LoseHealth
+    [SerializeField]
+    private OxygenSlider _oxygenSlider; //Variable updated in ReplenishOxygen
+    [SerializeField]
+    private Backpack _backpack;         //Variable updated in PickupObject and PlaceTrashInStorage
+    [SerializeField]
+    private TextWarning _textWarning;   //Variable updated in Update
+    [SerializeField]
+    private ObjectivesHud _ObjectivesHud;
+
+
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -75,7 +97,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
     }
 
     // Update is called once per frame
@@ -86,7 +108,6 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 input = true;
-
                 
                 StartCoroutine(CheckForUse());
 
@@ -102,7 +123,11 @@ public class PlayerController : MonoBehaviour
                     if (Movable)
                     {
                         moving = !moving;
-                        if (moving) direction = myCamera.forward.normalized;
+                        SoundPlayer.PlayPlayerSound("GAS");
+                        if (moving)
+                        {                            
+                            direction = myCamera.forward.normalized;
+                        }
                     }
                 }
                 else
@@ -116,6 +141,18 @@ public class PlayerController : MonoBehaviour
         } 
         else { ResetInput(); }
 
+        if (!inField)
+        {
+            _textWarning.SetText("<- Outside Mission Area ->");
+        }
+        else if (currentOxygen <= 10)
+        {
+            _textWarning.SetText("<- OXYGEN LEVELS CRITICAL ->");
+        }
+        else
+        {
+            _textWarning.SetText("");
+        }
 
     }
 
@@ -203,22 +240,45 @@ public class PlayerController : MonoBehaviour
     public void loseHealth(int damage)
     {
         currenthealth -= damage;
+        _healthSlider.UpdateSlider(currenthealth * 0.01f);
         if (currenthealth < 0) isAlive = false;
     }
 
     public void pickUpObject(int ammount)
     {
         currentSpace += ammount;
+        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
+
+        if (!backPackHalf && currentSpace >= (maxSpace / 2) && currentSpace < maxSpace) //Sound Player
+        {
+            SoundPlayer.PlayPlayerSound("BACKPACK HALF");
+            backPackHalf = true;
+        }
+        else if (currentSpace >= maxSpace)
+        {
+            SoundPlayer.PlayPlayerSound("BACKPACK FULL");
+        }
+        else
+        {
+            SoundPlayer.PlayPlayerSound("DEBRI");
+        }
     }
 
     public void PlaceTrashInStorage()
     {
+        int money = currentSpace * 10;
+        CurrentMoney += money;
+
         currentSpace = 0;
+        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
+        backPackHalf = false;
+        SoundPlayer.PlayPlayerSound("BACKPACK EMPTY");
     }
 
     public void replenishOxygen()
     {
         currentOxygen = maxOxygen;
+        _oxygenSlider.UpdateSlider(currentOxygen * 0.01f);
     }
 
     public void getBlackBox()
@@ -258,6 +318,7 @@ public class PlayerController : MonoBehaviour
             currentObjectives[o.questLine] = o; //else change the objective to the new one
         }
 
+        _ObjectivesHud.LoadString(o.description);
         Debug.Log($"new Objective: {o.description}");
     }
 
@@ -274,4 +335,14 @@ public class PlayerController : MonoBehaviour
         else return null;
     }
 
+    //Sounds
+    public void BackPackFullWarning()
+    {
+        SoundPlayer.PlayPlayerSound("NOSPACE");
+    }
+
+    public void receiveMoney(int ammount)
+    {
+        CurrentMoney += ammount;
+    }
 }

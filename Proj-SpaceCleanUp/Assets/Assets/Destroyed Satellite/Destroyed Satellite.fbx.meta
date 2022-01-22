@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MainSatBodyMat
+    second: {fileID: 2100000, guid: 3687a0352076e064a9a0887318a85eba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: SatelliteMat
     second: {fileID: 2100000, guid: b3cc46b3365a6a440a274d7d4459c3fb, type: 2}
   - first:
@@ -19,6 +24,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: SolarPanelMat
     second: {fileID: 2100000, guid: b445a85ad0debb14c90606a887ff8043, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main Sat Body Color
+    second: {fileID: 2800000, guid: c921df0ca1a126b4995dfd7c9faf1ca5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Solar Panel Colorjpg
+    second: {fileID: 2800000, guid: 96c25af4fdfd94749bba8573bc6a8d1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boosters for pain_BoosterMat_AlbedoTransparency
+    second: {fileID: 2800000, guid: 9425eda5407c35240b3a854046133cbe, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

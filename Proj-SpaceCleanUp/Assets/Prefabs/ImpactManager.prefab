@@ -40,11 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6185847422403520300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5262cf5194684c24582860ef3bbc2808, type: 3}
+  m_Script: {fileID: 11500000, guid: 1eeba1f70f9859848b22376a46d721fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 41.1
   maxZDistance: 59.8
-  impactObject: {fileID: 0}
+  impactObject: {fileID: 886145356149709557, guid: 5c486dfa01ec46f46b4a933bf313182a,
+    type: 3}
   playerPosition: {fileID: 0}
   playerController: {fileID: 0}

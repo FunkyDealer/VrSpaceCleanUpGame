@@ -184,8 +184,15 @@
      <Compile Include="Assets\Scripts\Debri.cs" />
      <Compile Include="Assets\Scripts\DebriManager.cs" />
      <Compile Include="Assets\Scripts\DebriStorage.cs" />
-     <Compile Include="Assets\Scripts\ImpactBehaviour.cs" />
-     <Compile Include="Assets\Scripts\ImpactManager.cs" />
+     <Compile Include="Assets\Scripts\Hud\Backpack.cs" />
+     <Compile Include="Assets\Scripts\Hud\HealthSlider.cs" />
+     <Compile Include="Assets\Scripts\Hud\HoverInfoHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\ObjectivesHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\OxygenSlider.cs" />
+     <Compile Include="Assets\Scripts\Hud\SpeechHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\TextWarning.cs" />
+     <Compile Include="Assets\Scripts\Impact System\ImpactBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Impact System\ImpactManager.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
      <Compile Include="Assets\Scripts\MandatoryCleanUpManager.cs" />
      <Compile Include="Assets\Scripts\ObjectiveInteractor.cs" />
@@ -204,6 +211,7 @@
      <Compile Include="Assets\Scripts\OgygenRefillStation.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerSoundPlayer.cs" />
      <Compile Include="Assets\Scripts\PlayZoneManager.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\Booster.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\BoosterObjectiveManager.cs" />

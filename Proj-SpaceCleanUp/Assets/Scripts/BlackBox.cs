@@ -5,8 +5,6 @@ using UnityEngine;
 public class BlackBox : Pickable, IInteractible
 {
     [SerializeField]
-    PlayerController player;
-    [SerializeField]
     ObjectiveManager manager;
 
     [SerializeField]
@@ -50,7 +48,7 @@ public class BlackBox : Pickable, IInteractible
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (activated && other.CompareTag("Player"))
         {
             EndObjective();
             activated = false;

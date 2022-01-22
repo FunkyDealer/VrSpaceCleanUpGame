@@ -10,6 +10,7 @@ public class Pickable : MonoBehaviour, IInteractible
     protected float movementSpeed = 7;
 
     protected Transform playerPos = null;
+    protected PlayerController player;
     protected bool activated = false;
     protected Vector3 dir;
     protected Rigidbody myRigidBody;
@@ -44,6 +45,7 @@ public class Pickable : MonoBehaviour, IInteractible
     public virtual void Interact(PlayerController player)
     {
         playerPos = player.transform;
+        this.player = player;
     }
 
     protected virtual void OnTriggerEnter(Collider other)
