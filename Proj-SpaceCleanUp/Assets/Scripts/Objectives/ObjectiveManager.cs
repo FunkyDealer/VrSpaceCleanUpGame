@@ -10,7 +10,7 @@ public class ObjectiveManager : MonoBehaviour
     private Dictionary<string, int> currentObjectiveList;
 
     [SerializeField]
-    PlayerController player;
+    ObjectiveController player;
 
     void Awake()
     {
@@ -27,7 +27,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 foreach (Objective i in list) //search the questlist for the first objective of each initial quest
                 {
-                    if (i.ID == 1) player.addObjective(i);
+                    if (i.ID == 1) player.AddObjective(i);
                 }
             }
         }
@@ -84,8 +84,8 @@ public class ObjectiveManager : MonoBehaviour
             if (QuestList[o.questLine].Count > 0)
             {
                 currentObjectiveList[o.questLine] = o.ID + 1;
-
-                player.addObjective(getNextObjective(o));
+                player.ObjectiveDone(o);
+                player.AddObjective(getNextObjective(o));
 
             }
             else

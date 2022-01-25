@@ -24,6 +24,8 @@ public class PlayerSoundPlayer : MonoBehaviour
     [SerializeField]
     AudioClip OxygenLowClip;
     [SerializeField]
+    AudioClip OxygenReplenish;
+    [SerializeField]
     AudioClip SuitRepairedClip;
     [SerializeField]
     AudioClip NotEnoughSpaceClip;
@@ -64,6 +66,9 @@ public class PlayerSoundPlayer : MonoBehaviour
                 break;
             case "OXYGEN LOW":
                 SuitVoiceSource.PlayOneShot(OxygenLowClip);
+                break;
+            case "OXYGENREPLENISH":
+                SuitVoiceSource.PlayOneShot(OxygenReplenish);
                 break;
             case "SUIT":
                 SuitVoiceSource.PlayOneShot(SuitRepairedClip);

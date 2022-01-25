@@ -33,25 +33,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask interactionMask;
 
+    [Header("Player Stuff")]
     //Player stuff
     private bool isAlive = true;
-
     //health
     private int currenthealth = 100;
     [SerializeField]
     private int maxHealth = 100;
-
-    //backPack Space
-    [SerializeField]
-    private int maxSpace = 10;
-    private int currentSpace = 0;
-    public int getMaxSpace() => maxSpace;
-    public int getCurrentSpace() => currentSpace;
-
     //Oxygen
     [SerializeField]
     private int maxOxygen = 100;
-    private int currentOxygen = 100;
+    [SerializeField]
+    private float oxygenUseRate = 0.5f;
+    private float currentOxygen = 100;
+    private bool oxygenHalf = false;
+    private bool oxygenLow = false;
+    private int oxygenUpgradeLevel = 1;
+    public int getOxygenUpgradeLevel => oxygenUpgradeLevel;
+
+    //backPack Space
+    [SerializeField]
+    private int maxBackPackSpace = 10;
+    private int currentBackPackSpace = 0;
+    public int getMaxBackPackSpace() => maxBackPackSpace;
+    public int getCurrentSpace() => currentBackPackSpace;
+    private int BackPackSpaceUpgradeLevel = 1;
+    public int getBackPackSpaceUpgradeLevel => BackPackSpaceUpgradeLevel;
 
     //Story flags
     bool blackBox = false;
@@ -62,9 +69,6 @@ public class PlayerController : MonoBehaviour
     private bool inField = true;
 
     private IInteractible[] myInteractibes;
-
-    //Objectives
-    private Dictionary<string, Objective> currentObjectives;
 
     private int CurrentMoney = 0;
 
@@ -84,8 +88,6 @@ public class PlayerController : MonoBehaviour
     private Backpack _backpack;         //Variable updated in PickupObject and PlaceTrashInStorage
     [SerializeField]
     private TextWarning _textWarning;   //Variable updated in Update
-    [SerializeField]
-    private ObjectivesHud _ObjectivesHud;
 
 
     void Awake()
@@ -97,7 +99,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
+        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
+        _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
+        _healthSlider.UpdateSlider(currenthealth, maxHealth);
     }
 
     // Update is called once per frame
@@ -138,21 +142,14 @@ public class PlayerController : MonoBehaviour
 
                 //hudController.resetRetticle();
             }
-        } 
-        else { ResetInput(); }
 
-        if (!inField)
-        {
-            _textWarning.SetText("<- Outside Mission Area ->");
-        }
-        else if (currentOxygen <= 10)
-        {
-            _textWarning.SetText("<- OXYGEN LEVELS CRITICAL ->");
-        }
-        else
-        {
-            _textWarning.SetText("");
-        }
+            currentOxygen = currentOxygen - oxygenUseRate * Time.deltaTime;        
+
+ 
+
+           
+        } 
+        else { ResetInput(); }  
 
     }
 
@@ -197,6 +194,31 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (!oxygenHalf && currentOxygen <= maxOxygen / 2)
+        {
+            oxygenHalf = true;
+            SoundPlayer.PlayPlayerSound("OXYGEN HALF");
+        }
+        if (oxygenHalf && !oxygenLow && currentOxygen <= 20)
+        {
+            oxygenLow = true;
+            SoundPlayer.PlayPlayerSound("OXYGEN LOW");
+        }
+
+        if (!inField)
+        {
+            _textWarning.SetText("<- Outside Mission Area ->");
+        }
+        else if (currentOxygen <= 20)
+        {
+            _textWarning.SetText("<- OXYGEN LEVELS CRITICAL ->");
+        }
+        else
+        {
+            _textWarning.SetText("");
+        }
+
+        _oxygenSlider.UpdateSlider((int)currentOxygen, maxOxygen);
 
         ResetInput();
     }
@@ -240,21 +262,21 @@ public class PlayerController : MonoBehaviour
     public void loseHealth(int damage)
     {
         currenthealth -= damage;
-        _healthSlider.UpdateSlider(currenthealth * 0.01f);
+        _healthSlider.UpdateSlider(currenthealth, maxHealth);
         if (currenthealth < 0) isAlive = false;
     }
 
     public void pickUpObject(int ammount)
     {
-        currentSpace += ammount;
-        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
+        currentBackPackSpace += ammount;
+        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
 
-        if (!backPackHalf && currentSpace >= (maxSpace / 2) && currentSpace < maxSpace) //Sound Player
+        if (!backPackHalf && currentBackPackSpace >= (maxBackPackSpace / 2) && currentBackPackSpace < maxBackPackSpace) //Sound Player
         {
             SoundPlayer.PlayPlayerSound("BACKPACK HALF");
             backPackHalf = true;
         }
-        else if (currentSpace >= maxSpace)
+        else if (currentBackPackSpace >= maxBackPackSpace)
         {
             SoundPlayer.PlayPlayerSound("BACKPACK FULL");
         }
@@ -266,11 +288,11 @@ public class PlayerController : MonoBehaviour
 
     public void PlaceTrashInStorage()
     {
-        int money = currentSpace * 10;
+        int money = currentBackPackSpace * 10;
         CurrentMoney += money;
 
-        currentSpace = 0;
-        _backpack.UpdateText($"{currentSpace} / {maxSpace}");
+        currentBackPackSpace = 0;
+        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
         backPackHalf = false;
         SoundPlayer.PlayPlayerSound("BACKPACK EMPTY");
     }
@@ -278,7 +300,10 @@ public class PlayerController : MonoBehaviour
     public void replenishOxygen()
     {
         currentOxygen = maxOxygen;
-        _oxygenSlider.UpdateSlider(currentOxygen * 0.01f);
+        SoundPlayer.PlayPlayerSound("OXYGENREPLENISH");
+        oxygenHalf = false;
+        oxygenLow = false;
+        _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
     }
 
     public void getBlackBox()
@@ -301,40 +326,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    public void addObjective(Objective o)
-    {
-        if (currentObjectives == null)
-        {
-            currentObjectives = new Dictionary<string, Objective>();
-        }
-
-        if (!currentObjectives.ContainsKey(o.questLine)) //if questline doesn't exist
-        {
-            currentObjectives.Add(o.questLine, o); //add it
-        }
-        else
-        {
-            currentObjectives[o.questLine] = o; //else change the objective to the new one
-        }
-
-        _ObjectivesHud.LoadString(o.description);
-        Debug.Log($"new Objective: {o.description}");
-    }
-
-    public void RemoveObjective(Objective o)
-    {
-        currentObjectives.Remove(o.questLine);
-
-        Debug.Log($"Completed Objective: {o.description}");
-    }
-   
-    public Objective getObjective(Objective o) //get questline objective
-    {
-        if (currentObjectives.ContainsKey(o.questLine)) return currentObjectives[o.questLine];
-        else return null;
-    }
-
     //Sounds
     public void BackPackFullWarning()
     {
@@ -345,4 +336,22 @@ public class PlayerController : MonoBehaviour
     {
         CurrentMoney += ammount;
     }
+
+    public void PayMoney(int ammount)
+    {
+        CurrentMoney -= ammount;
+    }
+
+    public void UpgradeOxygen(int newMax, int newLevel)
+    {
+        maxOxygen = newMax;
+        oxygenUpgradeLevel = newLevel;
+    }
+
+    public void UpgradeBackPack(int newMax, int newLevel)
+    {
+        maxBackPackSpace = newMax;
+        BackPackSpaceUpgradeLevel = newLevel;
+    }
+    
 }

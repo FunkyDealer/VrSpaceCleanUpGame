@@ -22,7 +22,7 @@ public class ObjectiveTrigger : ObjectiveInteractor
     {
         if (other.CompareTag("Player"))
         {
-            if (other.gameObject.GetComponent<PlayerController>().getObjective(objective) == objective)
+            if (other.gameObject.GetComponent<ObjectiveController>().GetObjective(objective) == objective)
             {
 
                 EndObjective();

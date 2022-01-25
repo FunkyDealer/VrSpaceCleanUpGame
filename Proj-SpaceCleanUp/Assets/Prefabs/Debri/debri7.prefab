@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2911343527165188372}
   - component: {fileID: 210577420683416005}
   - component: {fileID: 5624031479911573680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: debri7
-  m_TagString: Untagged
+  m_TagString: Debri
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

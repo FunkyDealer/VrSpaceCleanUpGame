@@ -11,24 +11,54 @@ public class ImpactBehaviour : MonoBehaviour
     private LineRenderer _lineRenderer;
     private PlayerController _playerController;
 
-    [SerializeField] private float maxLifeTime;
-    [SerializeField] private float objectSpeed;
-    [SerializeField] private float outerLine;
-    [SerializeField] private float innerLine;
+    [SerializeField]
+    private float maxLifeTime;
+    [SerializeField]
+    private float objectSpeed;
+    [SerializeField]
+    private float outerLine;
+    [SerializeField]
+    private float innerLine;
+
+    [SerializeField]
+    LayerMask interactMask;
     
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+
+        _lineRenderer.SetPosition(0, new Vector3( 999,  999, 999));
+        _lineRenderer.SetPosition(1, new Vector3(999, 999, 1000));
     }
 
     private void Start()
     {
         StartCoroutine(StartMovingCoroutine());
         StartCoroutine(DieCoroutine());
-        _lineTargetPosition = transform.position + _direction * 100;
+        _lineTargetPosition = calculateImpactPosition();
+    }
+
+    private Vector3 calculateImpactPosition()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, _direction, out hit, 1000, interactMask))
+        {
+            if (hit.collider)
+            {
+                return hit.point;
+            }
+        }
+
+
+        return transform.position + _direction * 1000;
     }
 
     private void Update()
+    {
+
+    }
+
+    private void FixedUpdate()
     {
         //Moves in the same direction until death.
         transform.position += _direction * objectSpeed * Time.deltaTime;
@@ -92,8 +122,13 @@ public class ImpactBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _playerController.loseHealth(10);
-            Debug.LogWarning("Player hit!");
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else if (!other.gameObject.CompareTag("FlyingDebri") && !other.gameObject.CompareTag("GameController"))
+        {
+            Destroy(gameObject);
+        }
+
+        
     }
 }

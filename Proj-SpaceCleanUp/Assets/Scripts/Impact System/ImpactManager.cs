@@ -1,16 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class ImpactManager : MonoBehaviour
 {
     private Vector3 _spawnPosition;
 
-    [SerializeField] [Range(0, 100)] private float spawnDistance;
-    [SerializeField] [Range(0, 100)] private float maxZDistance;
+    [SerializeField] [Range(0, 500)] private float spawnDistance;
+    [SerializeField] [Range(0, 500)] private float maxZDistance;
     [SerializeField] private GameObject impactObject;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private PlayerController playerController;
-    
+
+
+    [SerializeField]
+    int baseTimedelay = 10;
+    [SerializeField]
+    int delayFluctoation = 3;
+
+    void Start()
+    {
+        StartCoroutine(startSpawning());
+    }
+
+
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
@@ -30,5 +43,29 @@ public class ImpactManager : MonoBehaviour
 
         var tempImpact = temp.GetComponent<ImpactBehaviour>();
         tempImpact.SetPlayerController(playerController);
+    }
+
+    private IEnumerator TimedSpawn()
+    {
+        while (true) {
+
+            SpawnImpact();
+
+
+            int extraTime = Random.Range(-delayFluctoation, delayFluctoation + 1);
+
+            yield return new WaitForSeconds(baseTimedelay + extraTime);
+        }
+        yield return null;
+    }
+
+    private IEnumerator startSpawning()
+    {
+        int extraTime = Random.Range(-delayFluctoation, delayFluctoation + 1);
+
+        yield return new WaitForSeconds(baseTimedelay + extraTime);
+
+
+        StartCoroutine(TimedSpawn());
     }
 }

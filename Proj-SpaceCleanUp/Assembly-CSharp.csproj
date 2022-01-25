@@ -198,6 +198,7 @@
      <Compile Include="Assets\Scripts\ObjectiveInteractor.cs" />
      <Compile Include="Assets\Scripts\Objectives\Objective.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveButton.cs" />
+     <Compile Include="Assets\Scripts\Objectives\ObjectiveController.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveManager.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveTrigger.cs" />
      <Compile Include="Assets\Scripts\Objectives\ScriptableObjects\MyScriptableObject.cs" />
@@ -216,6 +217,7 @@
      <Compile Include="Assets\Scripts\Satellite Scripts\Booster.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\BoosterObjectiveManager.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\SatelliteScript.cs" />
+     <Compile Include="Assets\Scripts\UpgradeStation.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

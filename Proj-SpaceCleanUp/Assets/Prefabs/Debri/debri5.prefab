@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1395131093516008995}
   - component: {fileID: 2782627173869940967}
   - component: {fileID: 573224451607091425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: debri5
-  m_TagString: Untagged
+  m_TagString: Debri
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901871077169978497}
-  m_LocalRotation: {x: 0.50000006, y: 0.49999997, z: 0.5, w: -0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -59.738308, y: 4.2930694, z: -30.99736}
   m_LocalScale: {x: 261.1883, y: 23.42153, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
 --- !u!33 &5153324759038268580
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0625154b1aa820946afb3b8839fb20bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 10
   movementSpeed: 7
 --- !u!65 &2782627173869940967
 BoxCollider:

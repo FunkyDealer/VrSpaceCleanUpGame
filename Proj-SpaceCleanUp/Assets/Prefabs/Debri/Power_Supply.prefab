@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5418412686516912338}
   - component: {fileID: 5418412686516912339}
   - component: {fileID: 5418412686516912336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Power_Supply
-  m_TagString: Untagged
+  m_TagString: Debri
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

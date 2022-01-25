@@ -22,7 +22,7 @@ public class Debri : Pickable, IInteractible
     public override void Interact(PlayerController player)
     {
         base.Interact(player);
-        if (player.getCurrentSpace() + size <= player.getMaxSpace()) //if player has space available
+        if (player.getCurrentSpace() + size <= player.getMaxBackPackSpace()) //if player has space available
         {
             // this.gameObject.SetActive(false);
             activated = true;
