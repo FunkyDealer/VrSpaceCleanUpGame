@@ -182,12 +182,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074815319832720117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 0.60000026, y: 0.2, z: 0.24973926}
   m_Children:
   - {fileID: 1673807580101027682}
   m_Father: {fileID: 3977065042110449885}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -293,9 +293,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751784887796621657}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BackPackUpgrade
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 4347404888235351840}
   - component: {fileID: 7677387203741973748}
   - component: {fileID: 3370705327378945477}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Oxygen Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -485,9 +485,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1435497038720147526}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: OxygenUpgrade
-  m_TagString: UI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -774,9 +774,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3977065042791978037}
   - {fileID: 3513964577806218735}
   - {fileID: 2787353528434481121}
+  - {fileID: 3977065042791978037}
   - {fileID: 1435497038720147526}
   - {fileID: 7751784887796621657}
   - {fileID: 3977065042306842434}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 3977065042791978037}
   - component: {fileID: 3977065042791978035}
   - component: {fileID: 3977065042791978036}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: UpgradeMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1983,7 +1983,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3977065042110449885}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3303,12 +3303,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4139223592748603365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 0.60000026, y: 0.2, z: 0.24973926}
   m_Children:
   - {fileID: 2355208984128739994}
   m_Father: {fileID: 3977065042110449885}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3416,7 +3416,7 @@ GameObject:
   - component: {fileID: 4289358107179920857}
   - component: {fileID: 2485708839959807814}
   - component: {fileID: 2968499672386880035}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BackPack Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 1598957951303607312}
   - component: {fileID: 271017295552134816}
   - component: {fileID: 5648349700397697432}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: BackPack Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3619,7 +3619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3726,7 +3726,7 @@ GameObject:
   - component: {fileID: 5483340180856940132}
   - component: {fileID: 937444703870410707}
   - component: {fileID: 4878449908461444044}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Oxygen Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

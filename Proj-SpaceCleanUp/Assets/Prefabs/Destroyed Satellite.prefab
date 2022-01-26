@@ -63,6 +63,8 @@ MonoBehaviour:
   boosterObj: {fileID: 0}
   boosterManager: {fileID: 2045765032326022535}
   Promt: 0
+  gameName: Thruster
+  description: Moves the satellite
 --- !u!1 &433995540139513903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1452,8 @@ MonoBehaviour:
   boosterObj: {fileID: 350690310883724428}
   boosterManager: {fileID: 2045765032694977677}
   Promt: 1
+  gameName: Thruster
+  description: Moves the satellite
 --- !u!1 &2045765032168043652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,6 +1673,8 @@ MonoBehaviour:
   boosterObj: {fileID: 3877739119642465223}
   boosterManager: {fileID: 2045765032694977677}
   Promt: 1
+  gameName: Thruster
+  description: Moves the satellite
 --- !u!1 &2045765032326022533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,6 +2738,8 @@ MonoBehaviour:
     addedAtStart: 0
   scripts: []
   HideAtStart: 0
+  gameName: Base
+  description: 
 --- !u!114 &1435656649871239575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,6 +2911,8 @@ MonoBehaviour:
   boosterObj: {fileID: 0}
   boosterManager: {fileID: 2045765032326022535}
   Promt: 0
+  gameName: Thruster
+  description: Moves the satellite
 --- !u!1 &3943736752585936946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,7 +4248,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3cc46b3365a6a440a274d7d4459c3fb, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

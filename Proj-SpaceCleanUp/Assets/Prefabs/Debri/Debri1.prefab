@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6898214739070699711}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
-  m_LocalPosition: {x: -60.90155, y: 1.8833735, z: -34.566174}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 104.4, y: 104.39997, z: 104.39997}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: a32d83a7e7a17ac4397643a88240e8dc, type: 3}
+  - {fileID: 2100000, guid: ccbb12305f4ccee45b83877c917429b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 6
   movementSpeed: 7
+  gameName: Debri
+  description: a debri polluting the orbit
+  type: A
 --- !u!65 &7004250484293502869
 BoxCollider:
   m_ObjectHideFlags: 0

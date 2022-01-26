@@ -15,6 +15,7 @@ public class BlackBox : Pickable, IInteractible
 
     Triggerable[] triggerables; //Triggerable list
 
+
     protected override void Awake()
     {
         base.Awake();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DebriManager : ObjectiveInteractor
 {
-    List<Debri> debriList;
+    List<Debri> debriList; 
 
 
     protected override void Awake()
@@ -33,6 +33,7 @@ public class DebriManager : ObjectiveInteractor
                 {
                     debriList.Add(d);
                     d.setDebriManager(this);
+
                 }
             }
         }

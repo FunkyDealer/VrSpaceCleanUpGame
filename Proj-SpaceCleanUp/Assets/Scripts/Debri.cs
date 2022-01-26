@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Debri : Pickable, IInteractible
 {
 
     DebriManager manager;
+
+    [SerializeField]
+    string type;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +68,17 @@ public class Debri : Pickable, IInteractible
     public void setDebriManager(DebriManager manager)
     {
         this.manager = manager;
+    }
+
+    public override (string, string) getInfo(PlayerController player)
+    {
+        return (gameName + $" Size: {size}", description);
+    }
+
+
+    void OnDrawGizmos()
+    {
+        Handles.Label(transform.position, $"Size: {size}, {type}");
     }
 
 }

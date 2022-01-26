@@ -3,7 +3,92 @@ guid: cebeb524cd3687b4ba50bd3be15a2ee8
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Comparment M
+    second: {fileID: 2100000, guid: fe6bc28963859d8489b0ff813bcc769b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Compartment M
+    second: {fileID: 2100000, guid: 9a2d84715d38dc7408ddc45cce837572, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Controls M
+    second: {fileID: 2100000, guid: 944459eca6d42804bb4618c4774bdbd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor M
+    second: {fileID: 2100000, guid: 361803e465372c3498c3213529546b42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose M
+    second: {fileID: 2100000, guid: 682105d54b8a6e847b17b68090989a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oxygen M
+    second: {fileID: 2100000, guid: b482af21bd6d86d42ab133f7a0c8ca3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pieces M
+    second: {fileID: 2100000, guid: 5952782533d7c71429dcdacc8b00f0c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prot M
+    second: {fileID: 2100000, guid: b0b5cd46e51d91047914412dc0c769c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof M
+    second: {fileID: 2100000, guid: 99fb9452efc80244fbc3a513419cc475, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ship M
+    second: {fileID: 2100000, guid: 5453a3430665fe04ebdbad1e929d3499, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ship M2
+    second: {fileID: 2100000, guid: 2bb6496f95f92d24eb64af20c80f3682, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table M
+    second: {fileID: 2100000, guid: 23c5ee63665406649b8f616b93808c40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tail M
+    second: {fileID: 2100000, guid: f99fbc8f0fc969848a67917371337eca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Turbos M
+    second: {fileID: 2100000, guid: 67496b714dccadf40b9248960048d47d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall M
+    second: {fileID: 2100000, guid: 49356d3277397844eb39504a7313c9b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window M
+    second: {fileID: 2100000, guid: b79aad000ab5d6746a52185c72cdc265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wings M
+    second: {fileID: 2100000, guid: 07b8437d784902b4c89aeaaca7bc5804, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

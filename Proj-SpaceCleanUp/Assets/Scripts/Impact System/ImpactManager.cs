@@ -56,7 +56,6 @@ public class ImpactManager : MonoBehaviour
 
             yield return new WaitForSeconds(baseTimedelay + extraTime);
         }
-        yield return null;
     }
 
     private IEnumerator startSpawning()

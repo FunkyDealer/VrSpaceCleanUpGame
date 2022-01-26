@@ -138,3 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 7
   movementSpeed: 7
+  gameName: Power supply box
+  description: The power box of a black box
+  type: PS

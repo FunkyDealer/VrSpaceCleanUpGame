@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 685181260d776984fae93e1b13e703e1, type: 3}
+  - {fileID: 2100000, guid: ccbb12305f4ccee45b83877c917429b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 10
   movementSpeed: 7
+  gameName: Debri
+  description: a debri polluting the orbit
+  type: E
 --- !u!65 &2782627173869940967
 BoxCollider:
   m_ObjectHideFlags: 0

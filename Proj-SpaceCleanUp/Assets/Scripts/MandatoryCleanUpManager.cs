@@ -8,10 +8,16 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
 
     bool Active;
 
+    List<GameObject> debriLocators;
+
+    [SerializeField]
+    GameObject debriLocator;
+
     protected override void Awake()
     {
         base.Awake();
         if (debris == null) debris = new List<GameObject>();
+        if (debriLocators == null) debriLocators = new List<GameObject>();
     }
 
     // Start is called before the first frame update
@@ -30,6 +36,11 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
     {
         Active = true;
 
+        foreach (var d in debriLocators)
+        {
+            d.SetActive(true);
+        }
+
         if (debris.Count == 0) EndObjective();
     }
 
@@ -37,8 +48,16 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
     {
         if (other.gameObject.CompareTag("Debri"))
         {
-            if (debris == null) debris = new List<GameObject>();
+            if (debris == null)
+            {
+                debris = new List<GameObject>();                               
+            }
             debris.Add(other.gameObject);
+            GameObject o = Instantiate(debriLocator, other.gameObject.transform);
+            debriLocators.Add(o);
+            if (!Active) o.SetActive(false);
+
+            
         }
     }
 
@@ -46,7 +65,11 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
     {
         if (other.gameObject.CompareTag("Debri"))
         {
+            debriLocators.Remove(other.gameObject.transform.GetChild(0).gameObject);
             debris.Remove(other.gameObject);
+            
+
+            Destroy(other.gameObject.transform.GetChild(0).gameObject);
 
             if (Active && debris.Count == 0) EndObjective();
         }

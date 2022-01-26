@@ -15,6 +15,11 @@ public class Pickable : MonoBehaviour, IInteractible
     protected Vector3 dir;
     protected Rigidbody myRigidBody;
 
+    [SerializeField]
+    protected string gameName;
+    [SerializeField]
+    protected string description;
+
 
     protected virtual void Awake()
     {
@@ -58,4 +63,8 @@ public class Pickable : MonoBehaviour, IInteractible
         }
     }
 
+    public virtual (string, string) getInfo(PlayerController player)
+    {
+        return (gameName, description);
+    }
 }

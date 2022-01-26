@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ObjectiveButton : ObjectiveInteractor, IInteractible
 {
-
+    [SerializeField]
+    string gameName;
+    [SerializeField]
+    string description;
 
 
 
@@ -31,5 +34,10 @@ public class ObjectiveButton : ObjectiveInteractor, IInteractible
 
         EndObjective();
         //active next
+    }
+
+    public (string, string) getInfo(PlayerController player)
+    {
+        return (gameName, description);
     }
 }

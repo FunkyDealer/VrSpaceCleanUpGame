@@ -17,6 +17,11 @@ public class Booster : MonoBehaviour, IInteractible
 
     [SerializeField]
     bool Promt = true;
+
+    [SerializeField]
+    string gameName;
+    [SerializeField]
+    string description;
     
 
     void Awake()
@@ -65,5 +70,8 @@ public class Booster : MonoBehaviour, IInteractible
         else boosterManager.ReceiveNoticeActivate();
     }
 
-    
+    public (string, string) getInfo(PlayerController player)
+    {
+        return (gameName, description);
+    }
 }

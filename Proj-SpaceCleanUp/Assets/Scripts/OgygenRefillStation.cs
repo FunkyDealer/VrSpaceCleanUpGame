@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class OgygenRefillStation : MonoBehaviour, IInteractible
 {
-
+    [SerializeField]
+    string gameName;
+    [SerializeField]
+    string description;
 
     // Start is called before the first frame update
     void Start()
@@ -23,4 +26,8 @@ public class OgygenRefillStation : MonoBehaviour, IInteractible
         player.replenishOxygen();
     }
 
+    public (string, string) getInfo(PlayerController player)
+    {
+        return (gameName, description);
+    }
 }

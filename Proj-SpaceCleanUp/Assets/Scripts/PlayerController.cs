@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     private IInteractible[] myInteractibes;
 
     private int CurrentMoney = 0;
+    public int getCurrentMoney => CurrentMoney;
 
     //Sound
     [Header("Sound")]
@@ -88,6 +89,8 @@ public class PlayerController : MonoBehaviour
     private Backpack _backpack;         //Variable updated in PickupObject and PlaceTrashInStorage
     [SerializeField]
     private TextWarning _textWarning;   //Variable updated in Update
+    [SerializeField]
+    private HoverInfoHud _infoHud;
 
 
     void Awake()
@@ -185,13 +188,25 @@ public class PlayerController : MonoBehaviour
                 IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
                 if (I != null)
                 {
-                    myInteractibes = I;
+                    if (I.Length > 0)
+                    {
+                        myInteractibes = I;
+                        (string, string) info = I[0].getInfo(this);
+
+                        _infoHud.LoadText(info.Item1, info.Item2);
+                    }                    
                 }
                 else
                 {
                     myInteractibes = null;
+                    _infoHud.UnloadText();
                 }
             }
+        }
+        else
+        {
+            myInteractibes = null;
+            _infoHud.UnloadText();
         }
 
         if (!oxygenHalf && currentOxygen <= maxOxygen / 2)
@@ -246,11 +261,13 @@ public class PlayerController : MonoBehaviour
     {
         if (myInteractibes != null)
         {
+            //myInteractibes.Interact(this);
+
             foreach (var i in myInteractibes)
             {
                 i.Interact(this);
             }
-            
+
         }
     }
 

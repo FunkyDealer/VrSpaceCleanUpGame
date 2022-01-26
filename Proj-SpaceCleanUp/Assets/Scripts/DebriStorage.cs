@@ -9,6 +9,11 @@ public class DebriStorage : MonoBehaviour, IInteractible
 
     private int ammount;
 
+    [SerializeField]
+    string gameName;
+    [SerializeField]
+    string description;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +37,10 @@ public class DebriStorage : MonoBehaviour, IInteractible
     private void updateDisplay()
     {
         display.text = ammount.ToString();
+    }
+
+    public (string, string) getInfo(PlayerController player)
+    {
+        return (gameName, description);
     }
 }

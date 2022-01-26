@@ -307,6 +307,7 @@ MonoBehaviour:
   _oxygenSlider: {fileID: 2998915681383648824}
   _backpack: {fileID: 2998915680579035456}
   _textWarning: {fileID: 2998915679986404402}
+  _infoHud: {fileID: 2571295699078608563}
 --- !u!114 &2583766062849085227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,6 +978,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d907fde7e1b72424291e20ea535884e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2571295699078608563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3746707212597173159, guid: e90cf2de84c67664da13124a0472630a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175977762006920468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec9fcbfa1e252842938d76152e1fc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2998915681565991849 stripped

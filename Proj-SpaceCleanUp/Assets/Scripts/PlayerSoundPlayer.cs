@@ -78,7 +78,6 @@ public class PlayerSoundPlayer : MonoBehaviour
                 break;
             default:
                 throw new System.Exception($"{sound} is not a reconignized word");
-                break;
         }
     }
 
