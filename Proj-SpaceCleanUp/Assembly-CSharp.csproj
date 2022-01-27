@@ -184,6 +184,7 @@
      <Compile Include="Assets\Scripts\Debri.cs" />
      <Compile Include="Assets\Scripts\DebriManager.cs" />
      <Compile Include="Assets\Scripts\DebriStorage.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hud\Backpack.cs" />
      <Compile Include="Assets\Scripts\Hud\HealthSlider.cs" />
      <Compile Include="Assets\Scripts\Hud\HoverInfoHud.cs" />
@@ -194,6 +195,7 @@
      <Compile Include="Assets\Scripts\Impact System\ImpactBehaviour.cs" />
      <Compile Include="Assets\Scripts\Impact System\ImpactManager.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MenuController.cs" />
      <Compile Include="Assets\Scripts\MandatoryCleanUpManager.cs" />
      <Compile Include="Assets\Scripts\ObjectiveInteractor.cs" />
      <Compile Include="Assets\Scripts\Objectives\Objective.cs" />
@@ -205,6 +207,7 @@
      <Compile Include="Assets\Scripts\Objectives\Triggerables\ActivateObjectiveTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\ActivateObjectTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\AddObjectiveTriggerable.cs" />
+     <Compile Include="Assets\Scripts\Objectives\Triggerables\ChangeLevelTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\DeactivateSelfTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\MoveObjectTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\Triggerable.cs" />

@@ -78,7 +78,7 @@ public class Debri : Pickable, IInteractible
 
     void OnDrawGizmos()
     {
-        Handles.Label(transform.position, $"Size: {size}, {type}");
+        //Handles.Label(transform.position, $"Size: {size}, {type}");
     }
 
 }

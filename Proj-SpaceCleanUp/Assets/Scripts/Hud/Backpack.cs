@@ -3,10 +3,18 @@ using UnityEngine;
 
 public class Backpack : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text BackPackText;
+
+    [SerializeField]
+    private TMP_Text MoneyText;
     
-    public void UpdateText(string value)
+    public void UpdateBackPack(int currentSpace, int maxSpace)
     {
-        text.text = value;
+        BackPackText.text = $"{currentSpace} / {maxSpace}";
+    }
+
+    public void updateMoney(int value)
+    {
+        MoneyText.text = value.ToString() + "$";
     }
 }

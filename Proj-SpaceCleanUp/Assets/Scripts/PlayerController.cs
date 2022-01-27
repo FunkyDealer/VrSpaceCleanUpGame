@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    [SerializeField]
+    GameManager gameManager;
+
+    [Header("Movement")]
     [SerializeField]
     private float maxMovementSpeed = 5;
     private float currentMovementSpeed = 0;
@@ -37,9 +42,11 @@ public class PlayerController : MonoBehaviour
     //Player stuff
     private bool isAlive = true;
     //health
-    private int currenthealth = 100;
+    private float currenthealth = 100;
+    public float CurrentHealth => currenthealth;
     [SerializeField]
     private int maxHealth = 100;
+    public int MaxHealth => maxHealth;
     //Oxygen
     [SerializeField]
     private int maxOxygen = 100;
@@ -47,9 +54,13 @@ public class PlayerController : MonoBehaviour
     private float oxygenUseRate = 0.5f;
     private float currentOxygen = 100;
     private bool oxygenHalf = false;
-    private bool oxygenLow = false;
+    private bool oxygenLow = false; 
     private int oxygenUpgradeLevel = 1;
     public int getOxygenUpgradeLevel => oxygenUpgradeLevel;
+
+    private bool outOfOxygen = false;
+    [SerializeField]
+    private float HealthLoseRate = 1f;
 
     //backPack Space
     [SerializeField]
@@ -70,8 +81,10 @@ public class PlayerController : MonoBehaviour
 
     private IInteractible[] myInteractibes;
 
-    private int CurrentMoney = 0;
-    public int getCurrentMoney => CurrentMoney;
+    private int currentMoney = 0;
+    public int CurrentMoney => currentMoney;
+
+    private bool death = false;
 
     //Sound
     [Header("Sound")]
@@ -102,7 +115,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
+        _backpack.UpdateBackPack(currentBackPackSpace, maxBackPackSpace);
+        _backpack.updateMoney(currentMoney);
         _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
         _healthSlider.UpdateSlider(currenthealth, maxHealth);
     }
@@ -145,12 +159,28 @@ public class PlayerController : MonoBehaviour
 
                 //hudController.resetRetticle();
             }
+            
+            if (!outOfOxygen) currentOxygen = currentOxygen - oxygenUseRate * Time.deltaTime;
 
-            currentOxygen = currentOxygen - oxygenUseRate * Time.deltaTime;        
 
- 
+            if (outOfOxygen)
+            {
+                currenthealth = currenthealth - HealthLoseRate * Time.deltaTime;
+            }
 
-           
+            if (isAlive && currenthealth <= 0)
+            {
+                isAlive = false;
+                StartCoroutine(Die());
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                loseHealth(17);
+                receiveMoney(4);
+            }
+
+
         } 
         else { ResetInput(); }  
 
@@ -179,35 +209,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Interactions
-        RaycastHit hit;
-        if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, useDistance, layerMask: interactionMask))
-        {
-            if (hit.collider)
-            {
-                //Debug.Log($"Interacting with {hit.collider.transform.name}");
-                IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
-                if (I != null)
-                {
-                    if (I.Length > 0)
-                    {
-                        myInteractibes = I;
-                        (string, string) info = I[0].getInfo(this);
-
-                        _infoHud.LoadText(info.Item1, info.Item2);
-                    }                    
-                }
-                else
-                {
-                    myInteractibes = null;
-                    _infoHud.UnloadText();
-                }
-            }
-        }
-        else
-        {
-            myInteractibes = null;
-            _infoHud.UnloadText();
-        }
+        calculateInteraction();
 
         if (!oxygenHalf && currentOxygen <= maxOxygen / 2)
         {
@@ -218,6 +220,10 @@ public class PlayerController : MonoBehaviour
         {
             oxygenLow = true;
             SoundPlayer.PlayPlayerSound("OXYGEN LOW");
+        }
+        if (currentOxygen <= 0)
+        {
+            outOfOxygen = true;
         }
 
         if (!inField)
@@ -234,10 +240,49 @@ public class PlayerController : MonoBehaviour
         }
 
         _oxygenSlider.UpdateSlider((int)currentOxygen, maxOxygen);
+        _healthSlider.UpdateSlider((int)currenthealth, maxHealth);
 
         ResetInput();
     }
 
+    private void calculateInteraction()
+    {
+        //Interactions
+        RaycastHit hit;
+        if (Physics.Raycast(myCamera.position, myCamera.forward, out hit, useDistance, layerMask: interactionMask))
+        {
+            if (hit.collider)
+            {
+                //Debug.Log($"Interacting with {hit.collider.transform.name}");
+                IInteractible[] I = hit.collider.gameObject.GetComponents<IInteractible>();
+                if (I != null)
+                {
+                    if (I.Length > 0)
+                    {
+                        myInteractibes = I;
+                        (string, string) info = I[0].getInfo(this);
+
+                        _infoHud.LoadText(info.Item1, info.Item2);
+                    }
+                    else
+                    {
+                        myInteractibes = null;
+                        _infoHud.UnloadText();
+                    }
+                }
+                else
+                {
+                    myInteractibes = null;
+                    _infoHud.UnloadText();
+                }
+            }
+        }
+        else
+        {
+            myInteractibes = null;
+            _infoHud.UnloadText();
+        }
+    }
 
     //reset jump input
     private void ResetInput()
@@ -283,10 +328,16 @@ public class PlayerController : MonoBehaviour
         if (currenthealth < 0) isAlive = false;
     }
 
+    public void RecoverHealth()
+    {
+        currenthealth = maxHealth;
+        _healthSlider.UpdateSlider(currenthealth, maxHealth);
+    }
+
     public void pickUpObject(int ammount)
     {
         currentBackPackSpace += ammount;
-        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
+        _backpack.UpdateBackPack(currentBackPackSpace, maxBackPackSpace);
 
         if (!backPackHalf && currentBackPackSpace >= (maxBackPackSpace / 2) && currentBackPackSpace < maxBackPackSpace) //Sound Player
         {
@@ -306,10 +357,10 @@ public class PlayerController : MonoBehaviour
     public void PlaceTrashInStorage()
     {
         int money = currentBackPackSpace * 10;
-        CurrentMoney += money;
+        receiveMoney(money);
 
         currentBackPackSpace = 0;
-        _backpack.UpdateText($"{currentBackPackSpace} / {maxBackPackSpace}");
+        _backpack.UpdateBackPack(currentBackPackSpace, maxBackPackSpace);
         backPackHalf = false;
         SoundPlayer.PlayPlayerSound("BACKPACK EMPTY");
     }
@@ -320,6 +371,7 @@ public class PlayerController : MonoBehaviour
         SoundPlayer.PlayPlayerSound("OXYGENREPLENISH");
         oxygenHalf = false;
         oxygenLow = false;
+        outOfOxygen = false;
         _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
     }
 
@@ -351,24 +403,38 @@ public class PlayerController : MonoBehaviour
 
     public void receiveMoney(int ammount)
     {
-        CurrentMoney += ammount;
+        currentMoney += ammount;
+        _backpack.updateMoney(currentMoney);
     }
 
     public void PayMoney(int ammount)
     {
-        CurrentMoney -= ammount;
+        currentMoney -= ammount;
+        _backpack.updateMoney(currentMoney);
     }
 
     public void UpgradeOxygen(int newMax, int newLevel)
     {
         maxOxygen = newMax;
         oxygenUpgradeLevel = newLevel;
+
+        _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
     }
 
     public void UpgradeBackPack(int newMax, int newLevel)
     {
         maxBackPackSpace = newMax;
         BackPackSpaceUpgradeLevel = newLevel;
+
+        _backpack.UpdateBackPack(currentBackPackSpace, maxBackPackSpace);
     }
-    
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(5f);
+
+        gameManager.changeToMainMenu();
+        
+    }
+
 }
