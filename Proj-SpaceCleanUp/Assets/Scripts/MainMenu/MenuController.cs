@@ -7,15 +7,28 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     [Header("Volume Setting")]
-    [SerializeField] private TMP_Text volumeTextValue = null;
-    [SerializeField] private Slider volumeSlider = null;
-    [SerializeField] private float defaultVolume = 1.0f;
+    [SerializeField]
+    private TMP_Text MusicvolumeTextValue = null;
+    [SerializeField]
+    private Slider MusicVolumeSlider = null;
+    [SerializeField]
+
+    private TMP_Text EffectsvolumeTextValue = null;
+    [SerializeField]
+    private Slider EffectsVolumeSlider = null;
+
+    [SerializeField]
+    private float defaultVolume = 1.0f;
 
     [SerializeField] private GameObject confirmationPrompt = null;
 
     [Header("Levels to Load")]
     public string _newGameLevel;
     private string levelToLoad;
+
+    private float newMusicVolume;
+    private float newEffectsVolume;
+
 
     public void StartGameDialogYes()
     {
@@ -27,29 +40,56 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume)
+    public void SetEffectsVolume(float value)
     {
-        AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0.0");
+
+    }
+
+    public void SetVolumeButtons()
+    {
+        MusicVolumeSlider.value = AppManager.inst.MusicVolume;
+        MusicvolumeTextValue.text = AppManager.inst.MusicVolume.ToString("0.0");
+
+        EffectsVolumeSlider.value = AppManager.inst.EffectsVolume;
+        EffectsvolumeTextValue.text = AppManager.inst.EffectsVolume.ToString("0.0");
+
+        newMusicVolume = AppManager.inst.MusicVolume;
+        newEffectsVolume = AppManager.inst.EffectsVolume;
+    }
+
+    public void SetNewEffectsVolume(float volume)
+    {
+        newEffectsVolume = volume;
+        EffectsvolumeTextValue.text = volume.ToString("0.0");
+    }
+
+    public void SetNewMusicVolume(float volume)
+    {
+        newMusicVolume = volume;
+        MusicvolumeTextValue.text = volume.ToString("0.0");
     }
 
     public void VolumeApply()
     {
-        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        AppManager.inst.SetEffectsVolume(newEffectsVolume);
+        AppManager.inst.SetMusicVolume(newMusicVolume);
+
         StartCoroutine(ConfirmationBox());
     }
 
-    public void ResetButton(string MenuType)
+    public void ResetVolume()
     {
-        if (MenuType == "Audio")
-        {
-            AudioListener.volume = defaultVolume;
-            volumeSlider.value = defaultVolume;
-            volumeTextValue.text = defaultVolume.ToString("0.0");
-            VolumeApply();
+        AppManager.inst.SetMusicVolume(defaultVolume);
+        MusicVolumeSlider.value = defaultVolume;
+        MusicvolumeTextValue.text = defaultVolume.ToString("0.0");
 
-        }
+        AppManager.inst.SetEffectsVolume(defaultVolume);
+        EffectsVolumeSlider.value = defaultVolume;
+        EffectsvolumeTextValue.text = defaultVolume.ToString("0.0");
     }
+
+
+
     public IEnumerator ConfirmationBox()
     {
         confirmationPrompt.SetActive(true);

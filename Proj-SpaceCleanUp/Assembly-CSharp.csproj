@@ -179,6 +179,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+     <Compile Include="Assets\Scripts\AppManager.cs" />
      <Compile Include="Assets\Scripts\BlackBox.cs" />
      <Compile Include="Assets\Scripts\ComputerScreen.cs" />
      <Compile Include="Assets\Scripts\Debri.cs" />
