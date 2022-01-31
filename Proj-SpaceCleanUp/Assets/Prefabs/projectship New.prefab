@@ -1990,9 +1990,9 @@ Transform:
   - {fileID: 1811950462632330502}
   - {fileID: 1811950462180335883}
   - {fileID: 1811950461743068042}
-  - {fileID: 1811950462690620002}
   - {fileID: 1811950462420571043}
   - {fileID: 1811950461049677992}
+  - {fileID: 585107193989842018}
   m_Father: {fileID: 6656289010427587838}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6117,7 +6117,7 @@ Transform:
   - {fileID: 1811950461582494332}
   - {fileID: 1811950461568496828}
   m_Father: {fileID: 1811950460900727982}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811950462478179288
 GameObject:
@@ -6837,113 +6837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToActivate:
   - {fileID: 1811950462180335882}
---- !u!1 &1811950462690620005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1811950462690620002}
-  - component: {fileID: 1811950462690619998}
-  - component: {fileID: 1811950462690620001}
-  - component: {fileID: 1811950462690620000}
-  - component: {fileID: 1811950462690620003}
-  m_Layer: 0
-  m_Name: Oxygen Refill Station
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1811950462690620002
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811950462690620005}
-  m_LocalRotation: {x: -0, y: -0.016409276, z: -0, w: 0.99986535}
-  m_LocalPosition: {x: 0.24710003, y: 0.303, z: -0.2084}
-  m_LocalScale: {x: 0.27188003, y: 0.27188, z: 0.07675173}
-  m_Children: []
-  m_Father: {fileID: 1811950460900727982}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -1.8800001, z: 0}
---- !u!33 &1811950462690619998
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811950462690620005}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1811950462690620001
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811950462690620005}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &1811950462690620000
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811950462690620005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1811950462690620003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811950462690620005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f6f600573a3d8443935a6311d220f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameName: Oxygen Refill Station
-  description: Used to refill oxygen
 --- !u!1 &1934176615105894279
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,6 +7943,33 @@ MonoBehaviour:
   display: {fileID: 1811950462316068359}
   gameName: Debri Storage
   description: Place debris here
+--- !u!65 &5314201370183474991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487254547271300721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0098556345, y: 0.002785469, z: 0.006110748}
+  m_Center: {x: -0.000119801305, y: 0.00009045013, z: 0.0002752772}
+--- !u!114 &8280336332078362519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487254547271300721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6f600573a3d8443935a6311d220f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameName: Oxygen Refill Tanks
+  description: Used to refill oxygen
 --- !u!1 &4570780363933323048
 GameObject:
   m_ObjectHideFlags: 0
@@ -9386,6 +9306,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 2.2737368e-13, y: 0, z: 0.000003814697}
+--- !u!1001 &5576585717864460152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1811950460900727982}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25079858
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2832
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.21480171
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0000023812968
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000023812968
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 40.000034
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 40.000027
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+        type: 3}
+      propertyPath: m_Name
+      value: Oxygens
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7847a462bddb4cf4fa2193aca507e3bf, type: 3}
+--- !u!1 &4487254547271300721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5576585717864460152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &585107193989842018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7847a462bddb4cf4fa2193aca507e3bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5576585717864460152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8055353962143599726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9506,12 +9522,12 @@ PrefabInstance:
     - target: {fileID: 3977065042747047292, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3977065042747047292, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3977065042747047292, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
@@ -9521,7 +9537,7 @@ PrefabInstance:
     - target: {fileID: 3977065042747047292, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3977065042747047292, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
@@ -9766,7 +9782,7 @@ PrefabInstance:
     - target: {fileID: 8570080606399128774, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8570080606399128774, guid: 76951108ec1513c4786b38ad9240a0bc,
         type: 3}

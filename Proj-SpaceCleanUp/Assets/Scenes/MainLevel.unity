@@ -1504,6 +1504,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 3741204473989706797}
+    - target: {fileID: 700730227787295686, guid: 3a9dc01b86c4fa149bd738335ce0d876,
+        type: 3}
+      propertyPath: oxygenUseRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2998915680031954711, guid: 3a9dc01b86c4fa149bd738335ce0d876,
         type: 3}
       propertyPath: m_AnchorMax.x
