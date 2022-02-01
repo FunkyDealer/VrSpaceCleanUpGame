@@ -183,9 +183,12 @@
      <Compile Include="Assets\Scripts\BlackBox.cs" />
      <Compile Include="Assets\Scripts\ComputerScreen.cs" />
      <Compile Include="Assets\Scripts\Debri.cs" />
+     <Compile Include="Assets\Scripts\DebriefingScene.cs" />
+     <Compile Include="Assets\Scripts\DebriefingSkip.cs" />
      <Compile Include="Assets\Scripts\DebriManager.cs" />
      <Compile Include="Assets\Scripts\DebriStorage.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameplayInitialCutScene.cs" />
      <Compile Include="Assets\Scripts\Hud\Backpack.cs" />
      <Compile Include="Assets\Scripts\Hud\HealthSlider.cs" />
      <Compile Include="Assets\Scripts\Hud\HoverInfoHud.cs" />
@@ -198,6 +201,7 @@
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuController.cs" />
      <Compile Include="Assets\Scripts\MandatoryCleanUpManager.cs" />
+     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\ObjectiveInteractor.cs" />
      <Compile Include="Assets\Scripts\Objectives\Objective.cs" />
      <Compile Include="Assets\Scripts\Objectives\ObjectiveButton.cs" />

@@ -106,10 +106,14 @@ public class PlayerController : MonoBehaviour
     private HoverInfoHud _infoHud;
 
 
+ 
+    
+
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
-        
+
+        //isAlive = false;
     }
 
     // Start is called before the first frame update
@@ -119,6 +123,11 @@ public class PlayerController : MonoBehaviour
         _backpack.updateMoney(currentMoney);
         _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
         _healthSlider.UpdateSlider(currenthealth, maxHealth);
+    }
+
+    public void startPlaying()
+    {
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -319,6 +328,8 @@ public class PlayerController : MonoBehaviour
     public void ChangeMovement(bool mv)
     {
         Movable = mv;
+        direction = Vector3.zero;
+        moving = false;
     }
 
     public void loseHealth(int damage)
