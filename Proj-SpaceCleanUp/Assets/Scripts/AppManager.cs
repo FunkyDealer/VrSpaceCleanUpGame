@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AppManager : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class AppManager : MonoBehaviour
 
     private float musicVolume = 1;
     public float MusicVolume => musicVolume;
-    public void SetMusicVolume(float value) => musicVolume = value;
 
     private float effectsVolume = 1;
     public float EffectsVolume => effectsVolume;
-    public void SetEffectsVolume(float value) => effectsVolume = value;
+    
+    [SerializeField]
+    private AudioMixer mixer;
 
      void Awake()
     {
@@ -39,5 +41,24 @@ public class AppManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+
+        float newMusicVolume = Mathf.Log(value) * 20;
+
+        mixer.SetFloat("MusicVolume", newMusicVolume);
+    }
+
+    public void SetEffectsVolume(float value)
+    {       
+
+        effectsVolume = value;
+
+        float newEffectsVolume = Mathf.Log(value) * 20;
+
+        mixer.SetFloat("EffectsVolume", newEffectsVolume);
     }
 }

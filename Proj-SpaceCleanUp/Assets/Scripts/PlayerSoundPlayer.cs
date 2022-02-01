@@ -47,34 +47,34 @@ public class PlayerSoundPlayer : MonoBehaviour
         switch (sound)
         {
             case "GAS":
-                GasReleaseSource.PlayOneShot(GasReleaseSource.clip, AppManager.inst.EffectsVolume);
+                GasReleaseSource.PlayOneShot(GasReleaseSource.clip);
                 break;
             case "BACKPACK HALF":
-                SuitVoiceSource.PlayOneShot(BackPackHalfFullClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(BackPackHalfFullClip);
                 break;
             case "BACKPACK FULL":
-                SuitVoiceSource.PlayOneShot(BackPackFullClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(BackPackFullClip);
                 break;
             case "BACKPACK EMPTY":
-                SuitVoiceSource.PlayOneShot(BackPackEmptyClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(BackPackEmptyClip);
                 break;
             case "DEBRI":
-                SuitVoiceSource.PlayOneShot(DebriPickClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(DebriPickClip);
                 break;
             case "OXYGEN HALF":
-                SuitVoiceSource.PlayOneShot(OxygenHalfClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(OxygenHalfClip);
                 break;
             case "OXYGEN LOW":
-                SuitVoiceSource.PlayOneShot(OxygenLowClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(OxygenLowClip);
                 break;
             case "OXYGENREPLENISH":
-                SuitVoiceSource.PlayOneShot(OxygenReplenish, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(OxygenReplenish);
                 break;
             case "SUIT":
-                SuitVoiceSource.PlayOneShot(SuitRepairedClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(SuitRepairedClip);
                 break;
             case "NOSPACE":
-                SuitVoiceSource.PlayOneShot(NotEnoughSpaceClip, AppManager.inst.EffectsVolume);
+                SuitVoiceSource.PlayOneShot(NotEnoughSpaceClip);
                 break;
             default:
                 throw new System.Exception($"{sound} is not a reconignized word");
