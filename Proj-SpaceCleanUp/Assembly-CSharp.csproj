@@ -192,6 +192,10 @@
      <Compile Include="Assets\Scripts\Hud\Backpack.cs" />
      <Compile Include="Assets\Scripts\Hud\HealthSlider.cs" />
      <Compile Include="Assets\Scripts\Hud\HoverInfoHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\InteractorHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\LongPressIndicatorHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\MovementHud.cs" />
+     <Compile Include="Assets\Scripts\Hud\NoInteractionHud.cs" />
      <Compile Include="Assets\Scripts\Hud\ObjectivesHud.cs" />
      <Compile Include="Assets\Scripts\Hud\OxygenSlider.cs" />
      <Compile Include="Assets\Scripts\Hud\SpeechHud.cs" />

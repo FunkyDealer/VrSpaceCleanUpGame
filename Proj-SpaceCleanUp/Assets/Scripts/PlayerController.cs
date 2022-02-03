@@ -104,8 +104,15 @@ public class PlayerController : MonoBehaviour
     private TextWarning _textWarning;   //Variable updated in Update
     [SerializeField]
     private HoverInfoHud _infoHud;
+    [SerializeField]
+    private MovementHud _movHud;
+    [SerializeField]
+    private LongPressIndicatorHud _pressIndicator;
+    [SerializeField]
+    private NoInteractionHud _noInteractionHud;
 
-
+    [SerializeField]
+    GvrReticlePointer GvrReticlePointer;
  
     
 
@@ -138,6 +145,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 input = true;
+                _pressIndicator.Press();
                 
                 StartCoroutine(CheckForUse());
 
@@ -147,6 +155,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonUp("Fire1"))
             {
                 input = false;
+                _pressIndicator.Release();
 
                 if (!longPress )
                 {
@@ -154,6 +163,7 @@ public class PlayerController : MonoBehaviour
                     {
                         moving = !moving;
                         SoundPlayer.PlayPlayerSound("GAS");
+                        _movHud.updateMovementIndicator();
                         if (moving)
                         {                            
                             direction = myCamera.forward.normalized;
@@ -268,21 +278,28 @@ public class PlayerController : MonoBehaviour
                 {
                     if (I.Length > 0)
                     {
+                        UnityEngine.EventSystems.RaycastResult result = new UnityEngine.EventSystems.RaycastResult();
+                        result.worldPosition = hit.point;
+
+
                         myInteractibes = I;
                         (string, string) info = I[0].getInfo(this);
 
                         _infoHud.LoadText(info.Item1, info.Item2);
+                        GvrReticlePointer.OnPointerHover(result, true);
                     }
                     else
                     {
                         myInteractibes = null;
                         _infoHud.UnloadText();
+                        GvrReticlePointer.OnPointerExit(null);
                     }
                 }
                 else
                 {
                     myInteractibes = null;
                     _infoHud.UnloadText();
+                    GvrReticlePointer.OnPointerExit(null);
                 }
             }
         }
@@ -290,6 +307,7 @@ public class PlayerController : MonoBehaviour
         {
             myInteractibes = null;
             _infoHud.UnloadText();
+            GvrReticlePointer.OnPointerExit(null);
         }
     }
 
@@ -306,7 +324,12 @@ public class PlayerController : MonoBehaviour
         if (input)
         {
             longPress = true;
-            moving = false;
+            if (moving)
+            {
+                moving = false;
+                _movHud.updateMovementIndicator();
+                SoundPlayer.PlayPlayerSound("GAS");
+            }
             Debug.Log("Long Press");
         }
     }
@@ -323,13 +346,22 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        else
+        {
+            _noInteractionHud.Enable();
+        }
     }
 
     public void ChangeMovement(bool mv)
     {
         Movable = mv;
         direction = Vector3.zero;
-        moving = false;
+        if (moving)
+        {
+            moving = false;
+            _movHud.updateMovementIndicator();
+        }
+        
     }
 
     public void loseHealth(int damage)

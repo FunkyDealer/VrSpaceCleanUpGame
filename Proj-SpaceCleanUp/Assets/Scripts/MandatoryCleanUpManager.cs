@@ -54,7 +54,7 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
             {
                 debris = new List<GameObject>();                               
             }
-            debris.Add(other.gameObject);
+            if (!debris.Contains(other.gameObject)) debris.Add(other.gameObject);
             GameObject o = Instantiate(debriLocator, other.gameObject.transform);
             debriLocators.Add(o);
             o.SetActive(Active);
@@ -67,11 +67,13 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
     {
         if (other.gameObject.CompareTag("Debri"))
         {
-            debriLocators.Remove(other.gameObject.transform.GetChild(0).gameObject);
+            for (int i = 0; i < other.transform.childCount; i++)
+            {
+                debriLocators.Remove(other.gameObject.transform.GetChild(i).gameObject);
+                Destroy(other.gameObject.transform.GetChild(i).gameObject);
+            }
             debris.Remove(other.gameObject);
-            
-
-            Destroy(other.gameObject.transform.GetChild(0).gameObject);
+                                   
 
             if (Active && debris.Count == 0) EndObjective();
         }
