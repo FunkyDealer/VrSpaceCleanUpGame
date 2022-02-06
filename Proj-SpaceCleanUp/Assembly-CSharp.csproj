@@ -182,6 +182,10 @@
      <Compile Include="Assets\Scripts\AppManager.cs" />
      <Compile Include="Assets\Scripts\BlackBox.cs" />
      <Compile Include="Assets\Scripts\ComputerScreen.cs" />
+     <Compile Include="Assets\Scripts\Cutscene Scripts\AnimatorSetter.cs" />
+     <Compile Include="Assets\Scripts\Cutscene Scripts\ConclusionFirstPart.cs" />
+     <Compile Include="Assets\Scripts\Cutscene Scripts\ConclusionSecondPart.cs" />
+     <Compile Include="Assets\Scripts\Cutscene Scripts\CutsceneManager.cs" />
      <Compile Include="Assets\Scripts\Debri.cs" />
      <Compile Include="Assets\Scripts\DebriefingScene.cs" />
      <Compile Include="Assets\Scripts\DebriefingSkip.cs" />
@@ -217,6 +221,7 @@
      <Compile Include="Assets\Scripts\Objectives\Triggerables\ActivateObjectTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\AddObjectiveTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\ChangeLevelTriggerable.cs" />
+     <Compile Include="Assets\Scripts\Objectives\Triggerables\ChangeSecondaryObjectiveStatus.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\DeactivateSelfTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\MoveObjectTriggerable.cs" />
      <Compile Include="Assets\Scripts\Objectives\Triggerables\Triggerable.cs" />

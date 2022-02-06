@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DebriefingSkip : MonoBehaviour
 {
+    [SerializeField]
+    string nextScene;
+
     public void Skip()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }

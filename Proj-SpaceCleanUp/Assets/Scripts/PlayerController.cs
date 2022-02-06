@@ -152,6 +152,16 @@ public class PlayerController : MonoBehaviour
                 //hudController.StartReticle(useSeconds);
             }
 
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                AppManager.ChangeScene("Final Scene");
+            }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                AppManager.ChangeScene("MainMenu");
+            }
+
             if (Input.GetButtonUp("Fire1"))
             {
                 input = false;

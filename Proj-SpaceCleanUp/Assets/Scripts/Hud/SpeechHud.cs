@@ -9,6 +9,7 @@ public class SpeechHud : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private float textSpeed;
     [SerializeField] private float windowTime;
+
     private void Update() //Debug only
     {
         if (Input.GetKeyDown(KeyCode.A))

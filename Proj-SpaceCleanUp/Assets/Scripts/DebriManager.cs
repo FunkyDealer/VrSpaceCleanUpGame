@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DebriManager : ObjectiveInteractor
 {
-    List<Debri> debriList; 
+    List<Debri> debriList;
 
+
+    int initialDebriNumber = 0;
+    int minDebriNumber = 0;
 
     protected override void Awake()
     {
@@ -38,7 +41,8 @@ public class DebriManager : ObjectiveInteractor
             }
         }
 
-
+        initialDebriNumber = debriList.Count;
+        minDebriNumber = (int)(initialDebriNumber - (initialDebriNumber * 0.6f));
 
     }
 
@@ -53,7 +57,15 @@ public class DebriManager : ObjectiveInteractor
     {
         debriList.Remove(d);
 
-        if (debriList.Count == 0)
+        int count = debriList.Count;
+
+        if (!AppManager.DebriStatus && count <= minDebriNumber )
+        {
+            AppManager.setDebriStatus(true);
+            Debug.Log("suficient debris collected");
+        }
+
+        if (count <= 0)
         {
             EndObjective();
         }
