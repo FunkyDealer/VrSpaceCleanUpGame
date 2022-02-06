@@ -234,6 +234,8 @@
      <Compile Include="Assets\Scripts\Satellite Scripts\Booster.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\BoosterObjectiveManager.cs" />
      <Compile Include="Assets\Scripts\Satellite Scripts\SatelliteScript.cs" />
+     <Compile Include="Assets\Scripts\Skybox\CameraOrbiter.cs" />
+     <Compile Include="Assets\Scripts\Skybox\SunRotator.cs" />
      <Compile Include="Assets\Scripts\UpgradeStation.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

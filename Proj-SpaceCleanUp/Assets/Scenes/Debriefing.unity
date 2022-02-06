@@ -1383,6 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712d21bcf12297b4bb279d7570da0ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: MainLevel
 --- !u!222 &847444008
 CanvasRenderer:
   m_ObjectHideFlags: 0
