@@ -120,12 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &40446437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2613321212349570185, guid: 8e21e407b015ef644bd6e7d94c10babc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2144482540}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &42935776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2285,25 +2279,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 397036857163299684, guid: 8e21e407b015ef644bd6e7d94c10babc,
-        type: 3}
-      propertyPath: planet
-      value: 
-      objectReference: {fileID: 40446437}
     - target: {fileID: 397036859219205267, guid: 8e21e407b015ef644bd6e7d94c10babc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 397036859219205267, guid: 8e21e407b015ef644bd6e7d94c10babc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 67
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 397036859219205267, guid: 8e21e407b015ef644bd6e7d94c10babc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0297
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 397036859219205267, guid: 8e21e407b015ef644bd6e7d94c10babc,
         type: 3}
@@ -2349,21 +2338,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skybox
-      objectReference: {fileID: 0}
-    - target: {fileID: 2613321212349570185, guid: 8e21e407b015ef644bd6e7d94c10babc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4357434706007222357, guid: 8e21e407b015ef644bd6e7d94c10babc,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4357434706007222357, guid: 8e21e407b015ef644bd6e7d94c10babc,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e21e407b015ef644bd6e7d94c10babc, type: 3}

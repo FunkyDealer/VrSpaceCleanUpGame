@@ -5,9 +5,10 @@ using UnityEngine;
 public class SunRotator : MonoBehaviour
 {
     [SerializeField]
-    float speed = 0.1f;
+    float speed = 0.05f;
 
-
+    [SerializeField]
+    GameObject earth;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class SunRotator : MonoBehaviour
 
     void FixedUpdate()
     {
-        gameObject.transform.Rotate(transform.up, speed);
+        gameObject.transform.Rotate(earth.transform.up, -speed);
     }
 
 }
