@@ -30,7 +30,7 @@ public class CameraOrbiter : MonoBehaviour
     void Awake()
     {
         //move prediction object forward in orbit
-        sunSetPredictionObject.transform.RotateAround(planet.transform.position, planet.transform.up, 20);
+        sunSetPredictionObject.transform.RotateAround(planet.transform.position, planet.transform.up, 15);
     
     }
 

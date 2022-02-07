@@ -11,17 +11,40 @@ public class Debri : Pickable, IInteractible
     [SerializeField]
     string type;
 
+    Vector3 thisRotationVector;
+    float rotationSpeed = 5;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        thisRotationVector = gameObject.transform.up;
+
+        rotationSpeed = Random.value * 0.8f;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        thisRotationVector = new Vector3(Random.Range(0, 361), Random.Range(0, 361), Random.Range(0, 361));
+
+        gameObject.transform.Rotate(thisRotationVector, Random.Range(0, 360));
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        if (!activated) gameObject.transform.Rotate(thisRotationVector, rotationSpeed);
+
     }
 
     public override void Interact(PlayerController player)

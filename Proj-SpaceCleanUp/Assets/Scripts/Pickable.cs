@@ -38,7 +38,7 @@ public class Pickable : MonoBehaviour, IInteractible
         
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (activated)
         {
