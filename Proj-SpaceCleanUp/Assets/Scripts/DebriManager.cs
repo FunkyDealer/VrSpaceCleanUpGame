@@ -6,7 +6,6 @@ public class DebriManager : ObjectiveInteractor
 {
     List<Debri> debriList;
 
-
     int initialDebriNumber = 0;
     int minDebriNumber = 0;
 

@@ -86,8 +86,6 @@ public class Debri : Pickable, IInteractible
         Destroy(gameObject);
     }
 
-
-
     public void setDebriManager(DebriManager manager)
     {
         this.manager = manager;
