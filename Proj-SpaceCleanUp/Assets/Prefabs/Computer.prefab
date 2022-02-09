@@ -273,7 +273,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: UpgradeOxygen
         m_Mode: 1
         m_Arguments:
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0.4392157}
+  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0.4392157}
+  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0.4392157}
+  m_Color: {r: 0.6247775, g: 0.9811321, b: 0.92399824, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1583,8 +1583,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+    rgba: 4279153152
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1806,7 +1806,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: UpdateUpgradeMenu
         m_Mode: 1
         m_Arguments:
@@ -2201,8 +2201,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+    rgba: 4279153152
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2284,120 +2284,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3977065042845819045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3977065042845819041}
-  - component: {fileID: 3977065042845819042}
-  - component: {fileID: 3977065042845819043}
-  - component: {fileID: 3977065042845819044}
-  - component: {fileID: 4050432840168184616}
-  m_Layer: 5
-  m_Name: Computer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3977065042845819041
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977065042845819045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.66258, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3977065043558131972}
-  - {fileID: 3977065043304281828}
-  m_Father: {fileID: 8570080606399128774}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3977065042845819042
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977065042845819045}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3977065042845819043
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977065042845819045}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &3977065042845819044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977065042845819045}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4050432840168184616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977065042845819045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 601af1c2822055440a73bd03c9061525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  oxygenPriceLabel: {fileID: 4878449908461444044}
-  backPackPriceLabel: {fileID: 2968499672386880035}
-  oxygenUpgradeButtonText: {fileID: 6206019060281341157}
-  backpackUpgradeButtonText: {fileID: 8920752636153130283}
-  HealthRepairPriceLabel: {fileID: 3207110385012379538}
-  HealthRepairButton: {fileID: 8085296517179162363}
 --- !u!1 &3977065042923688203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,7 +2424,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: UpdateRepairMenu
         m_Mode: 1
         m_Arguments:
@@ -2764,7 +2650,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3181,11 +3067,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3977065043304281829}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.26, z: -1.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071067, y: 0.000000030908616, z: -0.000000030908623, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.0010999998, z: 0.00025999965}
+  m_LocalScale: {x: 0.00066258013, y: 0.0009999998, z: 0.0009999999}
   m_Children: []
-  m_Father: {fileID: 3977065042845819041}
+  m_Father: {fileID: 6358328764179821853}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3977065043534337298
@@ -3340,7 +3226,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: UpdateEverything
         m_Mode: 1
         m_Arguments:
@@ -3379,20 +3265,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3977065043558131973}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.511}
-  m_LocalScale: {x: 1.5092517, y: 1, z: 1}
+  m_LocalRotation: {x: 0.6915923, y: 0.000000011157333, z: -0.00000005196243, w: 0.7222882}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000158}
+  m_LocalScale: {x: 0.0010000002, y: 0.0009999998, z: 0.0009999999}
   m_Children:
   - {fileID: 3977065043534337297}
   - {fileID: 3977065041876779464}
   - {fileID: 3977065042110449885}
   - {fileID: 3977065042193826881}
-  m_Father: {fileID: 3977065042845819041}
+  m_Father: {fileID: 6358328764179821853}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 87.513, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.142}
+  m_AnchoredPosition: {x: -0, y: 0.000491}
   m_SizeDelta: {x: 0.58, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3977065043558131969
@@ -3599,7 +3485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: UpgradeBackPackSpace
         m_Mode: 1
         m_Arguments:
@@ -3683,7 +3569,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3838,7 +3724,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4185,7 +4071,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4340,7 +4226,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4422,6 +4308,38 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!65 &8407908608984727373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955058480564455182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0012241675, y: 0.0010142182, z: 0.0010410805}
+  m_Center: {x: 0.0000019929155, y: -0.000021084981, z: 0.000054337703}
+--- !u!114 &7794041751908984278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955058480564455182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601af1c2822055440a73bd03c9061525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  oxygenPriceLabel: {fileID: 4878449908461444044}
+  backPackPriceLabel: {fileID: 2968499672386880035}
+  oxygenUpgradeButtonText: {fileID: 6206019060281341157}
+  backpackUpgradeButtonText: {fileID: 8920752636153130283}
+  HealthRepairPriceLabel: {fileID: 3207110385012379538}
+  HealthRepairButton: {fileID: 8085296517179162363}
 --- !u!1 &8555326615334715193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,7 +4413,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279065350
-  m_fontColor: {r: 0.025364896, g: 0.3584906, b: 0.051742822, a: 1}
+  m_fontColor: {r: 0, g: 0.6981132, b: 0.05749163, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4604,7 +4522,7 @@ Transform:
   m_LocalPosition: {x: -56.21, y: 4.67, z: 3.05}
   m_LocalScale: {x: 2.735379, y: 2.735379, z: 2.735379}
   m_Children:
-  - {fileID: 3977065042845819041}
+  - {fileID: 6358328764179821853}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -55.697002, z: 0}
@@ -4881,7 +4799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4050432840168184616}
+      - m_Target: {fileID: 0}
         m_MethodName: repairHealth
         m_Mode: 1
         m_Arguments:
@@ -4892,3 +4810,99 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &2109908509134921223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8570080606399128774}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.547
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000030908616
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+        type: 3}
+      propertyPath: m_Name
+      value: Computer (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ed27fb1f4f7b36409c5b50276f761db, type: 3}
+--- !u!4 &6358328764179821853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+    type: 3}
+  m_PrefabInstance: {fileID: 2109908509134921223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7955058480564455182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2ed27fb1f4f7b36409c5b50276f761db,
+    type: 3}
+  m_PrefabInstance: {fileID: 2109908509134921223}
+  m_PrefabAsset: {fileID: 0}
