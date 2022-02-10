@@ -22,13 +22,25 @@ public class ImpactBehaviour : MonoBehaviour
 
     [SerializeField]
     LayerMask interactMask;
-    
+
+
+    [SerializeField]
+    float minRotationSpeed = 0.1f;
+    [SerializeField]
+    float maxRotationSpeed = 1;
+
+    float rotationSpeed = 0.5f;
+    Vector3 rotationAxis = Vector3.up;
+
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
 
         _lineRenderer.SetPosition(0, new Vector3( 999,  999, 999));
         _lineRenderer.SetPosition(1, new Vector3(999, 999, 1000));
+
+
+        rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed);
     }
 
     private void Start()
@@ -36,6 +48,9 @@ public class ImpactBehaviour : MonoBehaviour
         StartCoroutine(StartMovingCoroutine());
         StartCoroutine(DieCoroutine());
         _lineTargetPosition = calculateImpactPosition();
+
+        rotationAxis = new Vector3(Random.Range(0, 361), Random.Range(0, 361), Random.Range(0, 361));
+        gameObject.transform.Rotate(rotationAxis, Random.Range(0, 360));
     }
 
     private Vector3 calculateImpactPosition()
@@ -61,7 +76,10 @@ public class ImpactBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         //Moves in the same direction until death.
-        transform.position += _direction * objectSpeed * Time.deltaTime;
+        transform.position += _direction * objectSpeed;
+
+        gameObject.transform.Rotate(rotationAxis, rotationSpeed);
+
         DrawLine();
     }
 

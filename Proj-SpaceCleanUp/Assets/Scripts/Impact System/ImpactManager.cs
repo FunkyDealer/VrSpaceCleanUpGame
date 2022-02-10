@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,6 +18,9 @@ public class ImpactManager : MonoBehaviour
     int baseTimedelay = 10;
     [SerializeField]
     int delayFluctoation = 3;
+
+    [SerializeField]
+    private List<GameObject> impactObjects;
 
     void Start()
     {
