@@ -39,6 +39,9 @@ public class UpgradeStation : MonoBehaviour
     [SerializeField]
     private TMP_Text HealthRepairButton;
 
+    [SerializeField]
+    AudioSource clickSound;
+
     void Awake()
     {      
         //Upgrades
@@ -65,6 +68,11 @@ public class UpgradeStation : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayClick()
+    {
+        clickSound.Play();
     }
 
     public void UpdateUpgradeMenu()

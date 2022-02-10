@@ -29,6 +29,10 @@ public class MenuController : MonoBehaviour
     private float newMusicVolume;
     private float newEffectsVolume;
 
+    void Start()
+    {
+        AppManager.resetGame();
+    }
 
     public void StartGameDialogYes()
     {

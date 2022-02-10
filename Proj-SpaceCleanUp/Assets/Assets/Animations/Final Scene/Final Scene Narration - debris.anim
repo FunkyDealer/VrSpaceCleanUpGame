@@ -1720,6 +1720,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 1.0333333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: da22679a6b23333439940175df1981e1,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7.133333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 7687416dcbf446a4488a82ce51e794e0,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 7.2
     functionName: PlayLine
     data: And through their efforts, little by little.
@@ -1727,10 +1743,26 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 12.116667
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 7268bc659820f2f4ca849af1c36fb231,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 12.166667
     functionName: PlayLine
     data: The orbit was once again clean.
     objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 15.133333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: e61e00a7e3ba2384d922a8c73be949c1,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

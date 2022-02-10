@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6249524935731915946}
   - component: {fileID: 4793583030058030568}
   m_Layer: 0
-  m_Name: ImpactObject
+  m_Name: Flying Debri 1
   m_TagString: FlyingDebri
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,12 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifeTime: 30
-  objectSpeed: 40
+  objectSpeed: 1
   outerLine: 5
   innerLine: 1
   interactMask:
     serializedVersion: 2
     m_Bits: 1
+  minRotationSpeed: 0.1
+  maxRotationSpeed: 1
 --- !u!135 &6774142945158086592
 SphereCollider:
   m_ObjectHideFlags: 0

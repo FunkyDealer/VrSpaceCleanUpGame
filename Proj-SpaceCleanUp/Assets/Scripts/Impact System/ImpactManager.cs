@@ -30,16 +30,19 @@ public class ImpactManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            SpawnImpact();
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    SpawnImpact();
+        //}
     }
 
     private void SpawnImpact()
     {
         var position = playerPosition.position + playerPosition.right * ((Random.Range(0, 2) * 2 - 1) * spawnDistance);
-        var temp = Instantiate(impactObject, _spawnPosition, Quaternion.identity, null);
+
+        GameObject o = impactObjects[Random.Range(0, impactObjects.Count - 1)];
+
+        var temp = Instantiate(o, _spawnPosition, Quaternion.identity, null);
 
         var aux = Random.Range(0, maxZDistance) * (Random.Range(0, 2) * 2 - 1);
         position = new Vector3(position.x, position.y, position.z + aux);

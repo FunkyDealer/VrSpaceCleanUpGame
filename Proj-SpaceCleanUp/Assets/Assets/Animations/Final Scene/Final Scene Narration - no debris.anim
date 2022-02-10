@@ -1757,6 +1757,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.8333333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 0f916b9513913244cbb4f399240e5f1c,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.9
     functionName: PlayLine
     data: In the end, cleaning space proved to be but a task too hard to accomplish
       for some.
@@ -1764,10 +1772,26 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 6.4333334
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 3d147c0275033534bad1da9d31b8d5ec,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 6.516667
     functionName: PlayLine
     data: The number of debris proved to be overwhelming.
     objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 9.966666
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 8e692f7194817ca439ea3456929a0e44,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

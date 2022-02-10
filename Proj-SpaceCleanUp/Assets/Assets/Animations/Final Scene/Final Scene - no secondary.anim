@@ -1600,20 +1600,44 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 6
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: f86482b533aac00469d19c2ce6d0b027,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 6.266667
     functionName: PlayLine
     data: Welcome back, and good work.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 9.5
+  - time: 9.516666
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: d2cea1efb98ecc84c9caabad6b3de8b8,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 9.75
     functionName: PlayLine
     data: "We\u2019ll be taking care of things from now on."
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 13.166667
+  - time: 13.183333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: ea7bcef0f4fba6e47adf9b184a4ea29e,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 13.416667
     functionName: PlayLine
     data: "That\u2019s it? I guess all our worries were in vain."
     objectReferenceParameter: {fileID: 0}
@@ -1621,6 +1645,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 17.5
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: be9b4921e1ad7454a87a7a84d29a361a,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 17.75
     functionName: PlayLine
     data: "He\u2019s a professional, he does as he\u2019s told."
     objectReferenceParameter: {fileID: 0}
@@ -1628,6 +1660,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 21.666666
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 7c2a9ec1ae913c64980387326dc20c90,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 21.916666
     functionName: PlayLine
     data: I guess I was expecting something else.
     objectReferenceParameter: {fileID: 0}
@@ -1635,6 +1675,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 25.333334
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 914896a4852d4024a9c3793ac8abc33b,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.583334
     functionName: PlayLine
     data: "Thank you for your work, and don\u2019t worry, you will be\u2026 well compensated
       for your troubles."
@@ -1643,6 +1691,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 32.333332
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 0497855861591d846ba2dc2eaf00c8a0,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 32.6
     functionName: PlayLine
     data: Until next time, rest well.
     objectReferenceParameter: {fileID: 0}

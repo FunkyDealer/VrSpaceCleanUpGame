@@ -1816,6 +1816,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 7
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 6fd0337e35d7e274bb5f9aad2403dc2f,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7.05
     functionName: PlayLine
     data: It seems our trust in you was misplaced.
     objectReferenceParameter: {fileID: 0}
@@ -1823,6 +1831,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 11
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: a2c2540eb9bc4b24e92d8345053e1ae7,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 11.05
     functionName: PlayLine
     data: Your handler specifically told you not to mess around, why did you still
       do it?
@@ -1831,6 +1847,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 16.5
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 0894807d99996c143881020e17f13ec7,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 16.55
     functionName: PlayLine
     data: 'You must think of yourself a hero, right? '
     objectReferenceParameter: {fileID: 0}
@@ -1838,6 +1862,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 20
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 4db8d5e40c830484ab34fe2ddb190f8e,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 20.05
     functionName: PlayLine
     data: The hero of the people, who reveals the truth to the masses.
     objectReferenceParameter: {fileID: 0}
@@ -1845,6 +1877,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 25
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 6a1fd8bfb8cea92458631918a69714b9,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.05
     functionName: PlayLine
     data: "The information on that black box was top secret, and now it\u2019s all
       over the news."
@@ -1853,13 +1893,29 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 32
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 92f1c49de08b4394183110eab1d14327,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 32.05
     functionName: PlayLine
     data: Luckily, we still seem to be in the clear.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 36.5
+  - time: 36.483334
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 8c47e21da4707a04aa1837b7b225cd6e,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 36.55
     functionName: PlayLine
     data: "In the clear? It\u2019s just a matter of time before our involvement with
       the American government is known."
@@ -1868,6 +1924,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 45
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 5a0a9783cdbdd7e478fb80a3990e5f32,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 45.05
     functionName: PlayLine
     data: You completed your objectives, as fast as always.
     objectReferenceParameter: {fileID: 0}
@@ -1875,6 +1939,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 49.5
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 8bf8bb0f476a3e449b023960ef61eff7,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 49.55
     functionName: PlayLine
     data: But I did not expect you to betray us like that.
     objectReferenceParameter: {fileID: 0}
@@ -1882,6 +1954,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 53.5
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 0ade4a143f5c4d5468a74a152ff19152,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 53.566666
     functionName: PlayLine
     data: "I\u2019m afraid we have no choice but to let you go."
     objectReferenceParameter: {fileID: 0}
@@ -1889,13 +1969,29 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 57.5
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: c0da50ce48d9efa4ebb9f79e69d6043c,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 57.55
     functionName: PlayLine
     data: So I thank you, for your continued service within our company.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 62.5
+  - time: 62.483334
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 68f40c63976061442b9c1532d32c592f,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 62.55
     functionName: PlayLine
     data: And Good Bye.
     objectReferenceParameter: {fileID: 0}

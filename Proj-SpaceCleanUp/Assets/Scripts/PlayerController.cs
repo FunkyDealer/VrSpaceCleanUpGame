@@ -203,11 +203,11 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Die());
             }
 
-            if (Input.GetButtonDown("Jump"))
-            {
-                loseHealth(17);
-                receiveMoney(4);
-            }
+            //if (Input.GetButtonDown("Jump"))
+            //{
+            //    loseHealth(17);
+            //    receiveMoney(4);
+            //}
 
 
         } 

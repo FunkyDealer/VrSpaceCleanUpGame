@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public void changeToMainMenu()
     {
         SceneManager.LoadScene(mainMenuName, LoadSceneMode.Single);
+        AppManager.resetGame();
     }
 
 }

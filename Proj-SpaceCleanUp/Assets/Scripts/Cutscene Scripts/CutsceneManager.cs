@@ -19,6 +19,9 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     string nextScene;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     void Awake()
     {
 
@@ -45,6 +48,11 @@ public class CutsceneManager : MonoBehaviour
     public void PlayLine(string line)
     {
         speechHud.WriteText(line);
+    }
+
+    public void PlayVoiceLine(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
     public void StartNextCutscene(float delay)

@@ -1582,6 +1582,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 4.4
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 0fd3f1e9e4196c9499dbe3ef25e61a6a,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.45
     functionName: PlayLine
     data: Welcome back, and good work.
     objectReferenceParameter: {fileID: 0}
@@ -1589,6 +1597,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 7.483333
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: e2006b2d3b64b38409305f361b9a3bd7,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7.5333333
     functionName: PlayLine
     data: That little affair with the black box was uncalled for.
     objectReferenceParameter: {fileID: 0}
@@ -1596,6 +1612,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 11.983334
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: beabdfe2cc21fa545b6c582d3fe23fab,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 12.033334
     functionName: PlayLine
     data: "We\u2019ll be taking it from your hands now, don\u2019t worry about it."
     objectReferenceParameter: {fileID: 0}
@@ -1603,6 +1627,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 15.9
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 4ea09bc1b541efd40939e252d04dabe0,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 15.95
     functionName: PlayLine
     data: "Next time, be a little more professional and don\u2019t mess around."
     objectReferenceParameter: {fileID: 0}
@@ -1610,6 +1642,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 20.9
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 82e9020a95a65d746aabc36528f8e549,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 20.95
     functionName: PlayLine
     data: It seems our thrust was misplaced.
     objectReferenceParameter: {fileID: 0}
@@ -1617,6 +1657,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 24.066668
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: dc98c57ed491fad409e285f2b0fb3ef4,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 24.116667
     functionName: PlayLine
     data: And yet you completed your job without any disaster happening.
     objectReferenceParameter: {fileID: 0}
@@ -1624,6 +1672,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 27.566668
+    functionName: PlayVoiceLine
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: e40d268509abde349b72fd564ac8bdec,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 27.616667
     functionName: PlayLine
     data: For that, we thank you, until next time. Rest well.
     objectReferenceParameter: {fileID: 0}

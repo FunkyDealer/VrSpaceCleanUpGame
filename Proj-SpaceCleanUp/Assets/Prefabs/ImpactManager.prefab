@@ -49,5 +49,10 @@ MonoBehaviour:
     type: 3}
   playerPosition: {fileID: 0}
   playerController: {fileID: 0}
-  baseTimedelay: 10
+  baseTimedelay: 7
   delayFluctoation: 3
+  impactObjects:
+  - {fileID: 886145356149709557, guid: 5c486dfa01ec46f46b4a933bf313182a, type: 3}
+  - {fileID: 886145356149709557, guid: 48c67eccae8977642b49a78e32e4eef8, type: 3}
+  - {fileID: 886145356149709557, guid: 38c228c7151af2c41844c4d1a009755f, type: 3}
+  - {fileID: 886145356149709557, guid: bcd8eff010c83c846bdaf70857c50098, type: 3}
