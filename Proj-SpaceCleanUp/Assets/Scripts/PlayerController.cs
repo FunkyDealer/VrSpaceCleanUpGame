@@ -113,8 +113,21 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     GvrReticlePointer GvrReticlePointer;
- 
-    
+
+    //Pc version stuff
+    [Header("Pc Version stuff")]
+    [SerializeField]
+    bool pcVersion = false;
+
+    [SerializeField]
+    float sensitivity = 3F;
+    float rotationX = 0F;
+    float rotationY = 0F;
+    private float rotArrayX;
+    float rotAverageX = 0F;
+    private float rotArrayY;
+    float rotAverageY = 0F;
+    Quaternion originalRotation;
 
     void Awake()
     {
@@ -130,6 +143,9 @@ public class PlayerController : MonoBehaviour
         _backpack.updateMoney(currentMoney);
         _oxygenSlider.UpdateSlider(currentOxygen, maxOxygen);
         _healthSlider.UpdateSlider(currenthealth, maxHealth);
+
+        originalRotation = transform.localRotation;
+        Cursor.visible = false;
     }
 
     public void startPlaying()
@@ -140,6 +156,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pcVersion) cameraRotation();
+         
         if (isAlive)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -272,6 +290,33 @@ public class PlayerController : MonoBehaviour
         _healthSlider.UpdateSlider((int)currenthealth, maxHealth);
 
         ResetInput();
+    }
+
+    private void cameraRotation()
+    {
+        //Resets the average rotation
+        rotAverageY = 0f;
+        rotAverageX = 0f;
+
+        //Gets rotational input from the mouse
+        rotationY += (Input.GetAxis("Mouse Y") * sensitivity) * 100 * Time.deltaTime;
+        rotationX += (Input.GetAxis("Mouse X") * sensitivity) * 100 * Time.deltaTime;
+
+        rotationY = Mathf.Clamp(rotationY, -90, 90);
+
+        //Adds the rotation values to their relative array
+        rotArrayY = rotationY;
+        rotArrayX = rotationX;
+
+        //Adding up all the rotational input values from each array
+        rotAverageY += rotArrayY;
+        rotAverageX += rotArrayX;
+
+        //Get the rotation you will be at next as a Quaternion
+        Quaternion yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
+        Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
+
+        transform.localRotation = originalRotation * xQuaternion * yQuaternion;
     }
 
     private void calculateInteraction()
