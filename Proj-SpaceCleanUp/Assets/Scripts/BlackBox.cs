@@ -15,6 +15,8 @@ public class BlackBox : Pickable, IInteractible
 
     Triggerable[] triggerables; //Triggerable list
 
+    
+    private DialogManager _dialogManager;
 
     protected override void Awake()
     {
@@ -28,7 +30,7 @@ public class BlackBox : Pickable, IInteractible
     // Start is called before the first frame update
     void Start()
     {
-       
+        _dialogManager = FindObjectOfType<DialogManager>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class BlackBox : Pickable, IInteractible
         if (activated && other.CompareTag("Player"))
         {
             EndObjective();
+            _dialogManager.RunSpeech(objective.speechID, objective.numberOfSentences);
             activated = false;
             this.gameObject.SetActive(false);
 

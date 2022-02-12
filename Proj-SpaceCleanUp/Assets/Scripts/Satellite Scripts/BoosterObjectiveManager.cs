@@ -7,11 +7,13 @@ public class BoosterObjectiveManager : ObjectiveInteractor
     bool code1 = false;
     bool code2 = false;
 
+    private DialogManager _dialogManager;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        _dialogManager = FindObjectOfType<DialogManager>();
     }
 
     // Update is called once per frame

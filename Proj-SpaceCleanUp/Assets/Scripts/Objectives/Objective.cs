@@ -11,4 +11,6 @@ public class Objective
     public string name;
     public string description;
     public bool addedAtStart = true;
+    public ushort speechID;
+    public ushort numberOfSentences;
 }

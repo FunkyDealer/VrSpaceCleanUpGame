@@ -12,7 +12,10 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
 
     [SerializeField]
     GameObject debriLocator;
-
+    
+    private DialogManager _dialogManager;
+    
+    
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +27,7 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
     protected override void Start()
     {
         base.Start();
+        _dialogManager = FindObjectOfType<DialogManager>();
     }
 
     // Update is called once per frame
@@ -73,9 +77,13 @@ public class MandatoryCleanUpManager : ObjectiveInteractor
                 Destroy(other.gameObject.transform.GetChild(i).gameObject);
             }
             debris.Remove(other.gameObject);
-                                   
 
-            if (Active && debris.Count == 0) EndObjective();
+
+            if (Active && debris.Count == 0)
+            {
+                EndObjective();
+                _dialogManager.RunSpeech(objective.speechID, objective.numberOfSentences);
+            }
         }
     }
 

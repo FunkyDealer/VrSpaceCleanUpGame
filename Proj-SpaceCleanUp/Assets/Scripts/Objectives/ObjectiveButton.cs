@@ -9,12 +9,14 @@ public class ObjectiveButton : ObjectiveInteractor, IInteractible
     [SerializeField]
     string description;
 
+    private DialogManager _dialogManager;
 
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        _dialogManager = FindObjectOfType<DialogManager>();
     }
 
 
@@ -26,13 +28,18 @@ public class ObjectiveButton : ObjectiveInteractor, IInteractible
 
     public void Interact(PlayerController player)
     {
-        if (manager.getCurrentQuestObjective(objective) == objective.ID) EndObjective();
+        if (manager.getCurrentQuestObjective(objective) == objective.ID)
+        {
+            EndObjective();
+            _dialogManager.RunSpeech(objective.speechID, objective.numberOfSentences);
+        }
     }
 
     private void Action()
     {
 
         EndObjective();
+        _dialogManager.RunSpeech(objective.speechID, objective.numberOfSentences);
         //active next
     }
 
