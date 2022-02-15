@@ -800,6 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1375107768}
+  - component: {fileID: 1375107769}
   m_Layer: 0
   m_Name: BackpackDialog
   m_TagString: Untagged
@@ -821,6 +822,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375107769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375107767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf538ca916305b48adabbd5fec949da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 1345033775}
+  playerController: {fileID: 444400125}
 --- !u!1001 &1439612979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1759,6 +1774,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 280245800532175288, guid: 245998fea56558d42a7df4a5ba44a96b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 444400125}
     - target: {fileID: 1443048529635549509, guid: 245998fea56558d42a7df4a5ba44a96b,
         type: 3}
       propertyPath: m_textInfo.spaceCount

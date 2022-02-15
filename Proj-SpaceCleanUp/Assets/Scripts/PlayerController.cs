@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -529,10 +530,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Die()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
-        gameManager.changeToMainMenu();
-        
+        SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
     }
 
 }

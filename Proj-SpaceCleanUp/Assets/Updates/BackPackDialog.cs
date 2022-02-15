@@ -2,19 +2,18 @@
 
 public class BackPackDialog : MonoBehaviour
 {
-    private DialogManager _dialogManager;
-    private PlayerController _playerController;
+    [SerializeField] private DialogManager dialogManager;
+    [SerializeField] private PlayerController playerController;
 
     private void Start()
     {
-        _dialogManager = FindObjectOfType<DialogManager>();
-        _playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
     {
-        if (_playerController.getCurrentSpace() < 7) return;
-        _dialogManager.RunSpeech(3, 1);
+        if (playerController.getCurrentSpace() < 7) return;
+        dialogManager.RunSpeech(3, 1);
+        Debug.Log("Passou");
         Destroy(gameObject);
     }
 }

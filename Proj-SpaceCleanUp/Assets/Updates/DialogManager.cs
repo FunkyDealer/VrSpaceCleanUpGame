@@ -77,7 +77,7 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator RunSpeechCoroutine(ushort id, ushort number)
     {
-        for (var i = id; i < id + number - 1; i++)
+        for (var i = id; i < id + number; i++)
         {
             speechHud.WriteText(_dialogDataBase.GetSentence(i), _dialogDataBase.GetName(i));
             yield return new WaitUntil(() => speechHud.StoppedTyping() == 0);
@@ -91,11 +91,11 @@ public class DialogManager : MonoBehaviour
         yield return new WaitUntil(() => speechHud.StoppedTyping() == 0);
         yield return new WaitForSeconds(1);
         
-        speechHud.WriteText(_dialogDataBase.GetSentence(1), _dialogDataBase.GetName(1));
+        speechHud.WriteText(_dialogDataBase.GetSentence(1), _dialogDataBase.GetName(1), 2f);
         yield return new WaitUntil(() => speechHud.StoppedTyping() == 0);
         yield return new WaitForSeconds(1);
         
         playerController.ChangeMovement(true);
-        speechHud.WriteText(_dialogDataBase.GetSentence(2), _dialogDataBase.GetName(2));
+        speechHud.WriteText(_dialogDataBase.GetSentence(2), _dialogDataBase.GetName(2), 2f);
     }
 }

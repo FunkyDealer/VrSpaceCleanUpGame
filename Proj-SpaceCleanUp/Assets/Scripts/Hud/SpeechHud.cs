@@ -14,12 +14,13 @@ public class SpeechHud : MonoBehaviour
     private ushort myBool = 0;
 
     //Starts the typing method and stops all coroutines to avoid closing a needed window
-    public void WriteText(string st, string stName = "")
+    public void WriteText(string st, string stName = "", float textSpd = 0)
     {
+        if (textSpd == 0) { textSpd = textSpeed;}
         image.enabled = true;
         text.text = "";
         StopAllCoroutines();
-        StartCoroutine(TypingCoroutine(st, stName));
+        StartCoroutine(TypingCoroutine(st, stName, textSpd));
     }
 
     public ushort StoppedTyping()
@@ -28,14 +29,14 @@ public class SpeechHud : MonoBehaviour
     }
 
     //Runs trough every char in a string and waits [textSpeed] seconds
-    private IEnumerator TypingCoroutine(string st, string stName)
+    private IEnumerator TypingCoroutine(string st, string stName, float textSpd)
     {
         myBool = 1;
         textName.text = stName;
         foreach (var c in st)
         {
             text.text += c;
-            yield return new WaitForSeconds(textSpeed * Time.deltaTime);
+            yield return new WaitForSeconds(textSpd * Time.deltaTime);
         }
 
         StartCoroutine(CloseTextBox());
