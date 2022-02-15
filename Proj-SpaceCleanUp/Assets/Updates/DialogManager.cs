@@ -81,7 +81,7 @@ public class DialogManager : MonoBehaviour
         {
             speechHud.WriteText(_dialogDataBase.GetSentence(i), _dialogDataBase.GetName(i));
             yield return new WaitUntil(() => speechHud.StoppedTyping() == 0);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3f);
         }
     }
     

@@ -655,7 +655,7 @@ MonoBehaviour:
   text: {fileID: 26396937}
   textName: {fileID: 536577422}
   image: {fileID: 375358537}
-  textSpeed: 3.7
+  textSpeed: 1.5
   windowTime: 2
 --- !u!114 &375358537
 MonoBehaviour:

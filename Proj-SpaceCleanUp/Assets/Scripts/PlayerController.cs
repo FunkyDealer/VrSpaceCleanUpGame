@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     GameManager gameManager;
 
@@ -115,6 +114,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GvrReticlePointer GvrReticlePointer;
 
+    [SerializeField]
+    Canvas canvas;
+    Vector3 canvasOriginalPos;
+    bool canvasOn = true;
+
     //Pc version stuff
     [Header("Pc Version stuff")]
     [SerializeField]
@@ -146,7 +150,10 @@ public class PlayerController : MonoBehaviour
         _healthSlider.UpdateSlider(currenthealth, maxHealth);
 
         originalRotation = transform.localRotation;
-        Cursor.visible = false;
+
+        if (pcVersion) Cursor.visible = false;
+
+        canvasOriginalPos = canvas.transform.localPosition;
     }
 
     public void startPlaying()
@@ -179,6 +186,35 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.I))
             {
                 AppManager.ChangeScene("MainMenu");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                AppManager.setMissionStatus(AppManager.EMissionStatus.none);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                AppManager.setMissionStatus(AppManager.EMissionStatus.partial);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                AppManager.setMissionStatus(AppManager.EMissionStatus.complete);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (canvasOn)
+                {
+                    canvasOn = false;
+                    canvas.transform.localPosition -= new Vector3(0, 0, 1);
+                }
+                else
+                {
+                    canvas.transform.localPosition = canvasOriginalPos;
+                    canvasOn = true;
+                }
             }
 
             if (Input.GetButtonUp("Fire1"))
