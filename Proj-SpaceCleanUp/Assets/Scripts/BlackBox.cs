@@ -55,10 +55,23 @@ public class BlackBox : Pickable, IInteractible
         {
             EndObjective();
             _dialogManager.RunSpeech(objective.speechID, objective.numberOfSentences);
+
             activated = false;
-            this.gameObject.SetActive(false);
+
+            transform.position = new Vector3(999, 999, 999);
+
+
+            StartCoroutine(CountDownToDeath(0.2f));
 
         }
+    }
+
+    private IEnumerator CountDownToDeath(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        //this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     public virtual void EndObjective()
